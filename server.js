@@ -36,7 +36,7 @@ mongoose.connect(connection, { useMongoClient: true },
     if (err) throw err
   })
 
-// app.use('/', htmlRouter)
+app.use('/', htmlRouter)
 app.use('/scrape', scrapeRouter)
 app.use('/product', productRouter)
 
