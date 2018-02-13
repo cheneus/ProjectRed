@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 const request = require("request");
+const path = require("path")
 
 const env = process.env.NODE_ENV || 'development';
 const config = require('./config')[env];
