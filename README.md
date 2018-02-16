@@ -9,8 +9,10 @@ This project is still in progress.
 2. "cd into the folder" then run "yarn install" 
 3. Once the install is done, run "mongod" to start the MongoDB. 
 4. Check if the mongod is running properly
-5. With the MongoDB is running
+5. With the MongoDB is running.
+
     5.1 **For Development** run "npm run dev" (script can be seen what is being ran with that command) 
+  
     5.2 **For Productions** run "npm start" (defaulted to heroku configuration for now)
     
 **
