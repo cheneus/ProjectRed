@@ -4,35 +4,35 @@
     "restaurants": [
       {"name": "Westville Chelsea",
       "url": "http://westvillenyc.com/menu/",
-      "photo": ""},
+      "photo": "https://i.imgur.com/WAZZsu9.jpg"},
       {"name": "Cotenna",
       "url": "http://places.singleplatform.com/cotenna/menu?ref=google",
-      "photo": ""},
+      "photo": "https://i.imgur.com/peL1YTI.jpg"},
       {"name": "Shuka",
       "url": "http://places.singleplatform.com/shuka/menu?ref=google",
-      "photo": ""}
+      "photo": "https://i.imgur.com/Ck9MMoR.jpg"}
     ],
     "landmarks": [
-      {"name": "Times Square",
-      "url": "https://www.timessquarenyc.org/",
-      "photo": ""},
+      {"name": "Rockefeller Center",
+      "url": "https://www.rockefellercenter.com/",
+      "photo": "https://i.imgur.com/7kUj5qm.jpg"},
       {"name": "Central Park",
       "url": "http://www.centralparknyc.org/",
-      "photo": ""},
+      "photo": "https://i.imgur.com/UMJzg3L.jpg"},
       {"name": "Bronx Zoo",
       "url": "https://bronxzoo.com/",
-      "photo": ""}
+      "photo": "https://i.imgur.com/GfqRHzy.jpg"}
     ],
     "activities": [
       {"name": "Chelsea Market",
       "url": "http://chelseamarket.com/",
-      "photo": ""},
+      "photo": "https://i.imgur.com/fSOf7fX.jpg"},
       {"name": "Comedy Cellar",
       "url": "http://www.comedycellar.com/",
-      "photo": ""},
+      "photo": "https://i.imgur.com/PfHXcn5.jpg"},
       {"name": "Fifth Avenue Shopping",
       "url": "http://visit5thavenue.com/",
-      "photo": ""}
+      "photo": "https://i.imgur.com/1OzX0Uk.jpg"}
     ]
   },
 
@@ -41,35 +41,35 @@
     "restaurants": [
       {"name": "ABC Kitchen",
       "url": "http://www.abckitchennyc.com/",
-      "photo": ""}, 
+      "photo": "https://i.imgur.com/lAA4Uw9.jpg"}, 
       {"name": "Bamonte's",
       "url": "https://www.facebook.com/pages/Bamontes-Restaurant/117607771598030",
-      "photo": ""},
+      "photo": "https://i.imgur.com/dRu2Tmo.jpg"},
       {"name": "Balthazar",
       "url": "http://balthazarny.com/",
-      "photo": ""}
+      "photo": "https://i.imgur.com/za4IJBZ.jpg"}
     ],
     "landmarks": [
       {"name": "Statue of Liberty",
       "url": "https://www.nps.gov/stli/index.htm",
-      "photo": ""},
+      "photo": "https://i.imgur.com/y1zv92d.jpg"},
       {"name": "Empire State Building",
       "url": "http://www.esbnyc.com/",
-      "photo": ""},
+      "photo": "https://i.imgur.com/THNubrD.jpg"},
       {"name": "Times Square",
       "url": "https://www.timessquarenyc.org/",
-      "photo": ""}
+      "photo": "https://i.imgur.com/rFgOivS.jpg"}
     ],
     "activities": [
       {"name": "Broadway Theatre",
       "url": "https://www.broadway.com/",
-      "photo": ""},
+      "photo": "https://i.imgur.com/wbAstY5.jpg"},
       {"name": "Metropolitan Museum of Art",
       "url": "https://www.metmuseum.org/",
-      "photo": ""},
+      "photo": "https://i.imgur.com/9qDEBy6.jpg"},
       {"name": "Madison Square Garden",
       "url": "https://www.msg.com/madison-square-garden",
-      "photo": ""}
+      "photo": "https://i.imgur.com/fWq8noy.jpg"}
     ]
   },
 
@@ -78,35 +78,35 @@
     "restaurants": [
       {"name": "Burp Castle",
       "url": "https://burpcastlenyc.wordpress.com/",
-      "photo": ""},
+      "photo": "https://i.imgur.com/GWK579c.jpg"},
       {"name": "Apothéke Cocktail Bar",
       "url": "https://www.apothekenyc.com/",
-      "photo": ""},
-      {"name": "Vynl",
-      "url": "http://vynl-nyc.com/",
-      "photo": ""}
+      "photo": "https://i.imgur.com/JBeHCdu.jpg"},
+      {"name": "Fabbrica",
+      "url": "http://fabbricanyc.com/",
+      "photo": "https://i.imgur.com/j82AeSy.jpg"}
     ],
     "landmarks": [
       {"name": "Madame Tussauds",
       "url": "https://www.madametussauds.com/new-york/en/",
-      "photo": ""},
+      "photo": "https://i.imgur.com/DZj6YBy.jpg"},
       {"name": "Top of The Rock",
       "url": "https://www.topoftherocknyc.com/",
-      "photo": ""},
+      "photo": "https://i.imgur.com/3ljkheP.jpg"},
       {"name": "Chinatown",
       "url": "https://www.tripadvisor.com/Attraction_Review-g60763-d181825-Reviews-Chinatown-New_York_City_New_York.html",
-      "photo": ""}
+      "photo": "https://i.imgur.com/Qk2bon3.jpg"}
     ],
     "activities": [
       {"name": "Alley Pond Park Adventure Course",
       "url": "https://www.nycgovparks.org/programs/rangers/adventure-course",
-      "photo": ""},
+      "photo": "https://i.imgur.com/VMup4re.jpg"},
       {"name": "Big Apple Helicopter Tour",
       "url": "https://www.libertyhelicopter.com/store/tours/the-big-apple-approx-12-15-minutes.html",
-      "photo": ""},
+      "photo": "https://i.imgur.com/Q3pJ7tH.jpg"},
       {"name": "Tribeca Sailing",
       "url": "http://www.tribecasailing.com/",
-      "photo": ""}
+      "photo": "https://i.imgur.com/LVGDNS7.jpg"}
     ]
   }
 ]
