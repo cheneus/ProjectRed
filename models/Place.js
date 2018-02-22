@@ -14,13 +14,20 @@ const PlaceSchema = new Schema({
 		type: String,
 		required: true
 	},
+	img:{
+		type:String,
+		required: true
+	},
 	location: {
+		type: String,
+		required: true
+	},
+	category: {
 		type: String,
 		required: true
 	},
 	tag: [{
 		type: String,
-		required: true
 	}]
 });
 

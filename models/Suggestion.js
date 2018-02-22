@@ -15,7 +15,7 @@ const SuggestionSchema = new Schema({
 });
 
 // we need to create a model using it
-const Suggestion = mongoose.model('response', SuggestionSchema);
+const Suggestion = mongoose.model('suggestion', SuggestionSchema);
 
 // make this available to our Node applications
 module.exports = Suggestion;
