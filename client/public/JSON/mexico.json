@@ -4,35 +4,35 @@
     "restaurants": [
       {"name": "Azul",
       "url": "http://azul.rest/",
-      "photo": ""},
+      "photo": "https://i.imgur.com/viwWTYL.jpg"},
       {"name": "Lardo",
       "url": "http://www.lardo.mx/",
-      "photo": ""},
+      "photo": "https://i.imgur.com/JCVn4na.jpg"},
       {"name": "La Guapachosa",
       "url": "http://www.laguapachosa.com/",
-      "photo": ""}
+      "photo": "https://i.imgur.com/DafP2pb.jpg"}
     ],
     "landmarks": [
       {"name": "Chapultepec Park",
       "url": "https://www.tripadvisor.com/Attraction_Review-g150800-d152193-Reviews-Chapultepec_Park-Mexico_City_Central_Mexico_and_Gulf_Coast.html",
-      "photo": ""},
+      "photo": "https://i.imgur.com/WVg2Rwq.jpg"},
       {"name": "Playacar Beach",
       "url": "https://www.locogringo.com/mexico/ways-to-play/riviera-maya-beaches/playacar/",
-      "photo": ""},
+      "photo": "https://i.imgur.com/ZRRhRDZ.jpg"},
       {"name": "Great Pyramid of Tenochtitlán",
       "url": "https://www.flightcentre.com.au/world-travel/mexico/mexico-city/great-pyramid-of-tenochtitlan",
-      "photo": ""}
+      "photo": "https://i.imgur.com/cXtPeVn.jpg"}
     ],
     "activities": [
       {"name": "Palacio de Bellas Artes",
       "url": "https://www.tripadvisor.com/Attraction_Review-g150800-d153969-Reviews-Palacio_de_Bellas_Artes-Mexico_City_Central_Mexico_and_Gulf_Coast.html",
-      "photo": ""},
-      {"name": "",
-      "url": "",
-      "photo": ""},
-      {"name": "",
-      "url": "",
-      "photo": ""}
+      "photo": "https://i.imgur.com/t7MKA9H.jpg"},
+      {"name": "Xcaret Park",
+      "url": "http://www.xcaret.com/",
+      "photo": "https://i.imgur.com/JUbMOta.jpg"},
+      {"name": "Frida Kahlo Museum",
+      "url": "http://www.museofridakahlo.org.mx/",
+      "photo": "https://i.imgur.com/xQS16UQ.jpg"}
     ]
   },
 
@@ -41,35 +41,35 @@
     "restaurants": [
       {"name": "Restaurante Nicos",
       "url": "https://www.nicosmexico.mx/",
-      "photo": ""},
+      "photo": "https://i.imgur.com/vPzWmJh.jpg"},
       {"name": "El Cardenal",
       "url": "http://www.restauranteelcardenal.com/",
-      "photo": ""},
+      "photo": "https://i.imgur.com/L2PhdPS.jpg"},
       {"name": "Quintonil",
       "url": "http://www.quintonil.com/",
-      "photo": ""}
+      "photo": "https://i.imgur.com/HC2muDq.png"}
     ],
     "landmarks": [
       {"name": "Coba Ruins",
       "url": "https://www.tripadvisor.com/Attraction_Review-g499447-d152724-Reviews-Coba_Ruins-Coba_Yucatan_Peninsula.html",
-      "photo": ""},
+      "photo": "https://i.imgur.com/TdLpkox.jpg"},
       {"name": "Pyramid of the Sun",
       "url": "https://www.tripadvisor.com/LocationPhotoDirectLink-g499421-d5010246-i110483405-Pyramid_of_the_Sun-San_Juan_Teotihuacan_Central_Mexico_and_Gulf_Coast.html",
-      "photo": ""},
+      "photo": "https://i.imgur.com/HohB0VJ.jpg"},
       {"name": "Plaza Garibaldi",
       "url": "https://www.tripadvisor.com/Attraction_Review-g150800-d153024-Reviews-Plaza_Garibaldi-Mexico_City_Central_Mexico_and_Gulf_Coast.html",
-      "photo": ""}
+      "photo": "https://i.imgur.com/VyiJxqM.jpg"}
     ],
     "activities": [
-      {"name": "",
-      "url": "",
-      "photo": ""},
-      {"name": "",
-      "url": "",
-      "photo": ""},
-      {"name": "",
-      "url": "",
-      "photo": ""}
+      {"name": "Dolphin Discovery",
+      "url": "https://www.dolphindiscovery.com/",
+      "photo": "https://i.imgur.com/a273Dvk.jpg"},
+      {"name": "Los Cabos Snorkeling",
+      "url": "https://www.viator.com/Los-Cabos-tours/Snorkeling/d627-g17-c58",
+      "photo": "https://i.imgur.com/4FQbYLq.jpg"},
+      {"name": "Jungle Tour",
+      "url": "https://aquaworld.com.mx/en/tours/jungle-tour/",
+      "photo": "https://i.imgur.com/9WaYjPt.jpg"}
     ]
   },
 
@@ -78,35 +78,35 @@
     "restaurants": [
       {"name": "Yuban",
       "url": "yuban.mx",
-      "photo": ""},
+      "photo": "https://i.imgur.com/AoeVXnL.jpg"},
       {"name": "Los Danzantes",
       "url": "losdanzantes.com",
-      "photo": ""},
+      "photo": "https://i.imgur.com/i6awBTD.jpg"},
       {"name": "Pizza del Perro Negro",
       "url": "pizzadelperronegro.com",
-      "photo": ""}
+      "photo": "https://i.imgur.com/ZNKAkJ8.jpg"}
     ],
     "landmarks": [
       {"name": "Xel-Ha Park",
       "url": "http://www.xelha.com/",
-      "photo": ""},
+      "photo": "https://i.imgur.com/PdgM1o8.jpg"},
       {"name": "Arch of Cabo San Lucas",
       "url": "https://www.tripadvisor.com/Attraction_Review-g152515-d152880-Reviews-El_Arco_de_Cabo_San_Lucas_Lands_End-Cabo_San_Lucas_Los_Cabos_Baja_California.html",
-      "photo": ""},
+      "photo": "https://i.imgur.com/fCioiz4.jpg"},
       {"name": "Popocatépetl",
       "url": "https://www.tripadvisor.com/Attraction_Review-g150796-d152737-Reviews-Popocatepetl-Central_Mexico_and_Gulf_Coast.html",
-      "photo": ""}
+      "photo": "https://i.imgur.com/1rjF5l8.jpg"}
     ],
     "activities": [
-      {"name": "",
-      "url": "",
-      "photo": ""},
-      {"name": "",
-      "url": "",
-      "photo": ""},
-      {"name": "",
-      "url": "",
-      "photo": ""}
+      {"name": "Sayulita Surfing",
+      "url": "https://www.sayulitalife.com/surf",
+      "photo": "https://i.imgur.com/cZjw2MF.jpg"},
+      {"name": "Rock Climbing in El Potrero Chico",
+      "url": "http://potrerochico.org/",
+      "photo": "https://i.imgur.com/QQpDI3N.jpg"},
+      {"name": "Copper Canyon Cycling",
+      "url": "http://traveltips.usatoday.com/copper-canyon-cycling-19279.html",
+      "photo": "https://i.imgur.com/MuOi4T3.jpg"}
     ]
   }
 ]
