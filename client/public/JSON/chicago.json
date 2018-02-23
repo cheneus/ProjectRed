@@ -1,0 +1,112 @@
+[
+  {
+    "personality": "Laid-Back",  
+    "restaurants": [
+      {"name": "Cafe Ice des Arts",
+      "url": "https://www.tripadvisor.com/Restaurant_Review-g293916-d1849260-Reviews-Cafe_Ice_des_Arts-Bangkok.html",
+      "photo": "https://i.imgur.com/ZJWPgm5.jpg"},
+      {"name": "Namsaah Bottling Trust",
+      "url": "https://www.tripadvisor.com/Restaurant_Review-g293916-d6864201-Reviews-Namsaah_Bottling_Trust-Bangkok.html",
+      "photo": "https://i.imgur.com/M9Qn8G0.jpg"},
+      {"name": "Soul Food Mahanakorn",
+      "url": "https://www.soulfoodmahanakorn.com/",
+      "photo": "https://i.imgur.com/x0qZkok.jpg"}
+    ],
+    "landmarks": [
+      {"name": "Patong",
+      "url": "https://www.tripadvisor.com/Tourism-g297930-Patong_Kathu_Phuket-Vacations.html",
+      "photo": "https://i.imgur.com/CEDmgrl.jpg"},
+      {"name": "Railay Beach",
+      "url": "https://www.tripadvisor.com/Attraction_Review-g1597036-d627649-Reviews-Railay_Beach-Railay_Beach_Krabi_Town_Krabi_Province.html",
+      "photo": "https://i.imgur.com/nDGxoB9.jpg"},
+      {"name": "MBK Center",
+      "url": "https://www.tripadvisor.com/Attraction_Review-g293916-d2172511-Reviews-MBK_Center_Ma_Boon_Khrong_Center-Bangkok.html",
+      "photo": "https://i.imgur.com/ZvBzt0D.jpg"}
+    ],
+    "activities": [
+      {"name": "Bangkok Dinner Cruise",
+      "url": "http://www.bangkok.com/dinner---shows-tours/",
+      "photo": "https://i.imgur.com/UGnnCbL.jpg"},
+      {"name": "Bangkok by Night",
+      "url": "https://www.viator.com/tours/Bangkok/Bangkok-by-Night-Food-Temples-and-Markets-by-Tuk-Tuk/d343-6467BKKNIGHT",
+      "photo": "https://i.imgur.com/HCSRTon.jpg"},
+      {"name": "Thai Akha Cooking School",
+      "url": "https://www.tripadvisor.com/Attraction_Review-g293917-d8614455-Reviews-Thai_Akha_Cooking_School-Chiang_Mai.html",
+      "photo": "https://i.imgur.com/6TytUgU.jpg"}
+    ]
+  },
+
+  {
+    "personality": "Tourist",
+    "restaurants": [
+      {"name": "Suay Restaurant",
+      "url": "http://www.suayrestaurant.com/",
+      "photo": "https://i.imgur.com/eEfSWOK.jpg"},
+      {"name": "Feuang Nara",
+      "url": "https://www.tripadvisor.com/Restaurant_Review-g293916-d2036960-Reviews-Feuang_Nara-Bangkok.html",
+      "photo": "https://i.imgur.com/WzwjeHL.jpg"},
+      {"name": "Le Vendôme",
+      "url": "http://www.levendomerestaurant.com/home/",
+      "photo": "https://i.imgur.com/2SA9Iym.jpg"}
+    ],
+    "landmarks": [
+      {"name": "Doi Inthanon National Park",
+      "url": "https://www.thainationalparks.com/doi-inthanon-national-park",
+      "photo": "https://i.imgur.com/5WM7naT.jpg"},
+      {"name": "Grand Palace",
+      "url": "http://www.bangkok.com/attraction-palace/grand-palace.htm",
+      "photo": "https://i.imgur.com/LESdSgA.jpg"},
+      {"name": "Wat Arun",
+      "url": "http://www.bangkok.com/attraction-temple/wat-arun.htm",
+      "photo": "https://i.imgur.com/NmRUPcp.jpg"}
+    ],
+    "activities": [
+      {"name": "Phuket FantaSea",
+      "url": "https://www.tripadvisor.com/Attraction_Review-g1379324-d455158-Reviews-Phuket_FantaSea-Kamala_Kathu_Phuket.html",
+      "photo": "https://i.imgur.com/U5Ussi8.jpg"},
+      {"name": "Floating Markets",
+      "url": "http://www.bangkok.com/magazine/5-floating-markets.htm",
+      "photo": "https://i.imgur.com/Me0fJV0.jpg"},
+      {"name": "Tiffany's Show",
+      "url": "https://www.tripadvisor.com/Attraction_Review-g293919-d1847172-Reviews-Tiffany_s_Show_Pattaya-Pattaya_Chonburi_Province.html",
+      "photo": "https://i.imgur.com/gFCslXm.jpg"}
+    ]
+  },
+
+  {
+    "personality": "Adventurous",
+    "restaurants": [
+      {"name": "Vertigo Bar",
+      "url": "https://www.banyantree.com/en/thailand/bangkok/dining/vertigo",
+      "photo": "https://i.imgur.com/DxLHZCH.jpg"},
+      {"name": "The Deck by Arun Residence",
+      "url": "https://www.tripadvisor.com/Restaurant_Review-g293916-d816295-Reviews-The_Deck-Bangkok.html",
+      "photo": "https://i.imgur.com/IcRPFlE.jpg"},
+      {"name": "Sala Rim Naam",
+      "url": "https://www.tripadvisor.com/Restaurant_Review-g293916-d866280-Reviews-Sala_Rim_Naam_at_Mandarin_Oriental_Bangkok-Bangkok.html",
+      "photo": "https://i.imgur.com/suLK88c.jpg"}
+    ],
+    "landmarks": [
+      {"name": "Phi Phi Islands",
+      "url": "http://www.phuket.com/island/phiphi.htm",
+      "photo": "https://i.imgur.com/B39OW4B.jpg"},
+      {"name": "Wat Chedi Luang",
+      "url": "https://www.tripadvisor.com/Attraction_Review-g293917-d447585-Reviews-Wat_Chedi_Luang_Varavihara-Chiang_Mai.html",
+      "photo": "https://i.imgur.com/rpPG4Tq.jpg"},
+      {"name": "Elephant Nature Park",
+      "url": "https://www.elephantnaturepark.org/",
+      "photo": "https://i.imgur.com/BN3whf0.jpg"}
+    ],
+    "activities": [
+      {"name": "Safari World",
+      "url": "https://www.tripadvisor.com/Attraction_Review-g293916-d455818-Reviews-Safari_World-Bangkok.html",
+      "photo": "https://i.imgur.com/yTCLtAu.jpg"},
+      {"name": "Burma Railway",
+      "url": "https://www.tripadvisor.com.au/Attraction_Review-g297924-d1731130-Reviews-Thai_Burma_Railway_Death_Railway-Kanchanaburi_Kanchanaburi_Province.html",
+      "photo": "https://i.imgur.com/K9DHNCB.jpg"},
+      {"name": "Jungle Safari",
+      "url": "https://www.phukettoursdirect.com/jungle-safari-tours.html",
+      "photo": "https://i.imgur.com/0RCLDDr.jpg"}
+    ]
+  }
+]
