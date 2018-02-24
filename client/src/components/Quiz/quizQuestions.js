@@ -1,7 +1,7 @@
 var quizQuestions = [
     
     {
-        question: 'For your inflight entertainment which genre would you choose?',
+        question: 'For your inflight entertainment which movie genre would you choose?',
         answers: [
                     {
                         type: 'Laidback',
