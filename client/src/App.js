@@ -18,9 +18,9 @@ class App extends Component {
      answerOptions: [],
      answer: '',
      answersCount: {
-       PersonA: 0,
-       PersonB: 0,
-       PersonC: 0
+       Laidback: 0,
+       Cultural: 0,
+       Adventurous: 0
      },
      result: ''
     };

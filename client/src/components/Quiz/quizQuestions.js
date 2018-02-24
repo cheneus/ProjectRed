@@ -4,15 +4,15 @@ var quizQuestions = [
         question: 'For your inflight entertainment which genre would you choose?',
         answers: [
                     {
-                        type: 'PersonA',
-                        content:'A Domedy'
+                        type: 'Laidback',
+                        content:'A Comedy'
                     }, 
                     {
-                        type: 'PersonB',
+                        type: 'Cultural',
                         content: 'A Documentary'
                     },
                     {
-                        type: 'PersonC',
+                        type: 'Adventurous',
                         content: 'An Action Movie'
                     } 
                 ]
@@ -21,15 +21,15 @@ var quizQuestions = [
         question: 'Your ideal Friday night consists of..',
         answers: [
                     {
-                        type: 'PersonA',
+                        type: 'Laidback',
                         content: 'Netflix'
                     },
                     {
-                        type: 'PersonB',
+                        type: 'Cultural',
                         content: 'Drinks with your closest friends'
                     },
                     {
-                        type: 'PersonC',
+                        type: 'Adventurous',
                         content: 'Out until the sun comes up'
                     }
                 ]
@@ -38,15 +38,15 @@ var quizQuestions = [
         question: 'While on vacation your priority is to..',
         answers: [
                     {
-                        type: 'PersonA',
+                        type: 'Laidback',
                         content: 'Relax'
                     },
                     {
-                        type: 'PersonB',
+                        type: 'Cultural',
                         content: 'See as much of my destination as possible'
                     },
                     {
-                        type: 'PersonC',
+                        type: 'Adventurous',
                         content: 'Try something I\'ve never done before'
                     }
                 ]
@@ -55,15 +55,15 @@ var quizQuestions = [
         question: 'Which best describes your perfect date?',
         answers: [
                     {
-                        type: 'PersonA',
+                        type: 'Laidback',
                         content: 'Dinner and a Movie'
                     },
                     {
-                        type: 'PersonB',
+                        type: 'Cultural',
                         content: 'Browsing a local Art Show'
                     },
                     {
-                        type: 'PersonC',
+                        type: 'Adventurous',
                         content: 'Cocktails and Dancing'
                     }
                 ]
@@ -72,15 +72,15 @@ var quizQuestions = [
         question: 'What could you never travel without?',
         answers: [
                     {
-                        type: 'PersonA',
+                        type: 'Laidback',
                         content: 'A book'
                     },
                     {
-                        type: 'PersonB',
+                        type: 'Cultural',
                         content: 'My camera'
                     },
                     {
-                        type: 'PersonC',
+                        type: 'Adventurous',
                         content: 'Sneakers'
                     }
                 ]
@@ -89,15 +89,15 @@ var quizQuestions = [
         question: 'You prefer to spend time outdoors..',
         answers: [
                     {
-                        type: 'PersonA',
+                        type: 'Laidback',
                         content: 'Lounging in a hammock'
                     },
                     {
-                        type: 'PersonB',
+                        type: 'Cultural',
                         content: 'Browsing a Farmers Market'
                     },
                     {
-                        type: 'PersonC',
+                        type: 'Adventurous',
                         content: 'Hiking the nearest mountain'
                     }
                 ]
@@ -106,15 +106,15 @@ var quizQuestions = [
         question: 'Sunday mornings are for..',
         answers: [
                     {
-                        type: 'PersonA',
+                        type: 'Laidback',
                         content: 'Sleeping in'
                     },
                     {
-                        type: 'PersonB',
+                        type: 'Cultural',
                         content: 'Brunch'
                     },
                     {
-                        type: 'PersonC',
+                        type: 'Adventurous',
                         content: 'Spin Class'
                     }
                 ]
@@ -123,15 +123,15 @@ var quizQuestions = [
         question: 'Pick an item for your bucket list',
         answers: [
                     {
-                        type: 'PersonA',
+                        type: 'Laidback',
                         content: 'Watching the sunset over Santorini, Greece'
                     },
                     {
-                        type: 'PersonB',
+                        type: 'Cultural',
                         content: 'Taste your way through Italy'
                     },
                     {
-                        type: 'PersonC',
+                        type: 'Adventurous',
                         content: 'Hike Machu Picchu'
                     }
                 ]
@@ -140,15 +140,15 @@ var quizQuestions = [
         question: 'Looking through your vacation photos you will most likely see..',
         answers: [
                     {
-                        type: 'PersonA',
+                        type: 'Laidback',
                         content: 'Shots of the beach at sunset'
                     },
                     {
-                        type: 'PersonB',
+                        type: 'Cultural',
                         content: 'Close-ups of all the amazing food I ate'
                     },
                     {
-                        type: 'PersonC',
+                        type: 'Adventurous',
                         content: 'Clifftop selfies'
                     }
                 ]
@@ -157,15 +157,15 @@ var quizQuestions = [
         question: 'If you could dine with a historical figure who would you choose?',
         answers: [
                     {
-                        type: 'PersonA',
+                        type: 'Laidback',
                         content: 'My favorite Author'
                     },
                     {
-                        type: 'PersonB',
+                        type: 'Cultural',
                         content: 'A notorious celebrity'
                     },
                     {
-                        type: 'PersonC',
+                        type: 'Adventurous',
                         content: 'A famous inventor'
                     }
                 ]
