@@ -8,7 +8,7 @@ var quizQuestions = [
                         content:'A Comedy'
                     }, 
                     {
-                        type: 'Cultural',
+                        type: 'Tourist',
                         content: 'A Documentary'
                     },
                     {
@@ -25,7 +25,7 @@ var quizQuestions = [
                         content: 'Netflix'
                     },
                     {
-                        type: 'Cultural',
+                        type: 'Tourist',
                         content: 'Drinks with your closest friends'
                     },
                     {
@@ -42,7 +42,7 @@ var quizQuestions = [
                         content: 'Relax'
                     },
                     {
-                        type: 'Cultural',
+                        type: 'Tourist',
                         content: 'See as much of my destination as possible'
                     },
                     {
@@ -59,7 +59,7 @@ var quizQuestions = [
                         content: 'Dinner and a Movie'
                     },
                     {
-                        type: 'Cultural',
+                        type: 'Tourist',
                         content: 'Browsing a local Art Show'
                     },
                     {
@@ -76,7 +76,7 @@ var quizQuestions = [
                         content: 'A book'
                     },
                     {
-                        type: 'Cultural',
+                        type: 'Tourist',
                         content: 'My camera'
                     },
                     {
@@ -93,7 +93,7 @@ var quizQuestions = [
                         content: 'Lounging in a hammock'
                     },
                     {
-                        type: 'Cultural',
+                        type: 'Tourist',
                         content: 'Browsing a Farmers Market'
                     },
                     {
@@ -110,7 +110,7 @@ var quizQuestions = [
                         content: 'Sleeping in'
                     },
                     {
-                        type: 'Cultural',
+                        type: 'Tourist',
                         content: 'Brunch'
                     },
                     {
@@ -127,7 +127,7 @@ var quizQuestions = [
                         content: 'Watching the sunset over Santorini, Greece'
                     },
                     {
-                        type: 'Cultural',
+                        type: 'Tourist',
                         content: 'Taste your way through Italy'
                     },
                     {
@@ -144,7 +144,7 @@ var quizQuestions = [
                         content: 'Shots of the beach at sunset'
                     },
                     {
-                        type: 'Cultural',
+                        type: 'Tourist',
                         content: 'Close-ups of all the amazing food I ate'
                     },
                     {
@@ -161,7 +161,7 @@ var quizQuestions = [
                         content: 'My favorite Author'
                     },
                     {
-                        type: 'Cultural',
+                        type: 'Tourist',
                         content: 'A notorious celebrity'
                     },
                     {

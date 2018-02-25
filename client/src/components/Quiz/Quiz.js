@@ -2,11 +2,12 @@ import React from 'react';
 import Question from './Question';
 import QuestionCount from './QuestionCount';
 import AnswerOption from './AnswerOption';
+import quizQuestions from './quizQuestions';
 import PropTypes from 'prop-types';
 
 function Quiz(props) {
-    
-	function renderAnswerOptions(key) {
+
+  function renderAnswerOptions(key) {
     return (
       <AnswerOption
         key={key.content}
@@ -29,6 +30,10 @@ function Quiz(props) {
          <ul className="answerOptions">
            {props.answerOptions.map(renderAnswerOptions)}
          </ul>
+          <div className="buttons">
+              <button className="btn btn-primary" type="submit">Previous</button>
+              <button className="btn btn-primary" type="submit" onClick={() => { props.onNextPressed }}>Next</button>
+          </div>
        </div>
     );
   }

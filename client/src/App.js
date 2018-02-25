@@ -19,7 +19,7 @@ class App extends Component {
      answer: '',
      answersCount: {
        Laidback: 0,
-       Cultural: 0,
+       Tourist: 0,
        Adventurous: 0
      },
      result: ''
@@ -89,10 +89,33 @@ class App extends Component {
     this.setState({
       counter: counter,
       questionId: questionId,
+
       question: quizQuestions[counter].question,
       answerOptions: quizQuestions[counter].answers,
       answer: ''
     });
+  }
+ 
+  // function setBackQuestion() {
+  //   const counter = this.state.count - 1;
+  //   const questionId = this.state.questionId -1;
+  //   this.setState({
+  //     counter: counter,
+  //     questionId: questionId,
+
+  //     question: quizQuestions[counter].question,
+  //     answerOptions: quizQuestions[counter].answers,
+  //     answer: ''
+  //   });
+  // }
+
+  handleNavButton(event) {
+    // this.setUserAnswer(event.currentTarget.value);
+    if (this.state.questionId < quizQuestions.length) {
+        setTimeout(() => this.setNextQuestion(), 300);
+      } else {
+        setTimeout(() => this.setResults(this.getResults()), 300);
+      }
   }
 
   handleAnswerSelected(event) {
@@ -130,6 +153,7 @@ class App extends Component {
         question={this.state.question}
         questionTotal={quizQuestions.length}
         onAnswerSelected={this.handleAnswerSelected}
+        onNextPressed={this.handleNavButton}
       />
     );
   }
@@ -143,7 +167,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
+        <header>
           <NavBar />
         </header>
         {this.state.result ? this.renderResult() : this.renderQuiz()}
