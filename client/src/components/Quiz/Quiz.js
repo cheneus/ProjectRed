@@ -2,7 +2,6 @@ import React from 'react';
 import Question from './Question';
 import QuestionCount from './QuestionCount';
 import AnswerOption from './AnswerOption';
-import quizQuestions from './quizQuestions';
 import PropTypes from 'prop-types';
 
 function Quiz(props) {
@@ -41,7 +40,6 @@ function Quiz(props) {
   Quiz.propTypes = {
     answer: PropTypes.string.isRequired,
     answerOptions: PropTypes.array.isRequired,
-    counter: PropTypes.number.isRequired,
     question: PropTypes.string.isRequired,
     questionId: PropTypes.number.isRequired,
     questionTotal: PropTypes.number.isRequired,
