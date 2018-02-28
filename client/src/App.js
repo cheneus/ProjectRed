@@ -13,6 +13,10 @@ class App extends Component {
 
    this.state = {
      counter: 0,
+     history: [{
+      questionId: 1,
+      answer: ''
+     }],
      questionId: 1,
      question: '',
      answerOptions: [],
@@ -28,7 +32,7 @@ class App extends Component {
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
   }
 
-  componentWillMount() {
+  componentWillMount () {
     const shuffledAnswerOptions = quizQuestions.map((question) => this.shuffleArray(question.answers));  
 
     this.setState({
@@ -37,7 +41,7 @@ class App extends Component {
     });
   }
 
- shuffleArray(array) {
+ shuffleArray = (array) => {
     var currentIndex = array.length, temporaryValue, randomIndex;
 
     // While there remain elements to shuffle...
@@ -71,9 +75,8 @@ class App extends Component {
 
     return body;
   };
-//
 
-  setUserAnswer(answer) {
+  setUserAnswer = (answer) => {
     const updatedAnswersCount = update(this.state.answersCount, {
       [answer]: {$apply: (currentValue) => currentValue + 1}
     });
@@ -83,9 +86,11 @@ class App extends Component {
     });
   }
 
-  setNextQuestion() {
-    const counter = this.state.counter + 1;
-    const questionId = this.state.questionId + 1;
+  handleBackButton = (event) => {
+    event.preventDefault()
+    console.log("prev")
+    const counter = this.state.counter - 1;
+    const questionId = this.state.questionId -1;
     this.setState({
       counter: counter,
       questionId: questionId,
@@ -95,39 +100,33 @@ class App extends Component {
       answer: ''
     });
   }
- 
-  // function setBackQuestion() {
-  //   const counter = this.state.count - 1;
-  //   const questionId = this.state.questionId -1;
-  //   this.setState({
-  //     counter: counter,
-  //     questionId: questionId,
 
-  //     question: quizQuestions[counter].question,
-  //     answerOptions: quizQuestions[counter].answers,
-  //     answer: ''
-  //   });
-  // }
-
-  handleNavButton(event) {
-    // this.setUserAnswer(event.currentTarget.value);
-    if (this.state.questionId < quizQuestions.length) {
-        setTimeout(() => this.setNextQuestion(), 300);
-      } else {
-        setTimeout(() => this.setResults(this.getResults()), 300);
+  handleNextButton = (event) => {
+    event.preventDefault()
+    console.log("next")
+    const counter = this.state.counter + 1;
+    const questionId = this.state.questionId + 1;
+     if (this.state.questionId === quizQuestions.length) {
+        setTimeout(() => this.setResults(this.getResults()), 300)
       }
+      else {
+        this.setState({
+          counter: counter,
+          questionId: questionId,
+
+          question: quizQuestions[counter].question,
+          answerOptions: quizQuestions[counter].answers,
+          answer: ''
+        });
+     }
   }
 
-  handleAnswerSelected(event) {
+
+  handleAnswerSelected = (event) => {
     this.setUserAnswer(event.currentTarget.value);
-    if (this.state.questionId < quizQuestions.length) {
-        setTimeout(() => this.setNextQuestion(), 300);
-      } else {
-        setTimeout(() => this.setResults(this.getResults()), 300);
-      }
   }
 
-  getResults() {
+  getResults = () => {
     const answersCount = this.state.answersCount;
     const answersCountKeys = Object.keys(answersCount);
     const answersCountValues = answersCountKeys.map((key) => answersCount[key]);
@@ -136,15 +135,15 @@ class App extends Component {
     return answersCountKeys.filter((key) => answersCount[key] === maxAnswerCount);
   }
 
-  setResults (result) {
+  setResults = (result) => {
     if (result.length === 1) {
       this.setState({ result: result[0] });
     } else {
-      this.setState({ result: 'Undetermined' });
+      this.setState({ result: 'Tourist' });
     }
   }
 
-   renderQuiz() {
+   renderQuiz = () => {
     return (
       <Quiz
         answer={this.state.answer}
@@ -153,7 +152,8 @@ class App extends Component {
         question={this.state.question}
         questionTotal={quizQuestions.length}
         onAnswerSelected={this.handleAnswerSelected}
-        onNextPressed={this.handleNavButton}
+        onNextPressed={this.handleNextButton}
+        onBackPressed={this.handleBackButton}
       />
     );
   }

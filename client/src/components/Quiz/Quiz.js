@@ -30,8 +30,8 @@ function Quiz(props) {
            {props.answerOptions.map(renderAnswerOptions)}
          </ul>
           <div className="buttons">
-              <button className="btn btn-primary" type="submit">Previous</button>
-              <button className="btn btn-primary" type="submit" onClick={() => { props.onNextPressed }}>Next</button>
+              <button className="btn btn-primary" type="submit" onClick={props.onBackPressed}>Previous</button>
+              <button className="btn btn-primary" type="submit" onClick={props.onNextPressed}>Next</button>
           </div>
        </div>
     );
