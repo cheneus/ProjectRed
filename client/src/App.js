@@ -13,10 +13,7 @@ class App extends Component {
 
    this.state = {
      counter: 0,
-     history: [{
-      questionId: 1,
-      answer: ''
-     }],
+     history: [],
      questionId: 1,
      question: '',
      answerOptions: [],
@@ -26,7 +23,8 @@ class App extends Component {
        Tourist: 0,
        Adventurous: 0
      },
-     result: ''
+     result: '',
+     response: []
     };
 
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
@@ -62,27 +60,15 @@ class App extends Component {
 
 //chen's code
   componentDidMount() {
-    this.callApi()
-      .then(res => this.setState({ response: res.express }))
-      .catch(err => console.log(err));
-  }
-
-  callApi = async () => {
-    const response = await fetch('/api/hello');
-    const body = await response.json();
-
-    if (response.status !== 200) throw Error(body.message);
-
-    return body;
+   
   };
 
-  setUserAnswer = (answer) => {
+  setUserAnswer = () => {
     const updatedAnswersCount = update(this.state.answersCount, {
-      [answer]: {$apply: (currentValue) => currentValue + 1}
+      [this.state.answer]: {$apply: (currentValue) => currentValue + 1}
     });
     this.setState({
       answersCount: updatedAnswersCount,
-      answer: answer
     });
   }
 
@@ -110,10 +96,10 @@ class App extends Component {
         setTimeout(() => this.setResults(this.getResults()), 300)
       }
       else {
+        this.setUserAnswer()
         this.setState({
           counter: counter,
           questionId: questionId,
-
           question: quizQuestions[counter].question,
           answerOptions: quizQuestions[counter].answers,
           answer: ''
@@ -123,7 +109,9 @@ class App extends Component {
 
 
   handleAnswerSelected = (event) => {
-    this.setUserAnswer(event.currentTarget.value);
+    this.setState({
+    answer: event.currentTarget.value
+  });
   }
 
   getResults = () => {
