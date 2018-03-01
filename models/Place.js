@@ -1,7 +1,7 @@
 // grab the things we need
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
-const Schema = mongoose.Schema;
+const Schema = mongoose.Schema
 
 const PlaceSchema = new Schema({
 	rating: {
@@ -16,23 +16,19 @@ const PlaceSchema = new Schema({
 	},
 	img:{
 		type:String,
-		required: true
+		required: false
 	},
-	location: {
-		type: String,
-		required: true
-	},
-	category: {
+	url: {
 		type: String,
 		required: true
 	},
 	tag: [{
 		type: String,
 	}]
-});
+})
 
 // we need to create a model using it
-const Place = mongoose.model('place', PlaceSchema);
+const Place = mongoose.model('place', PlaceSchema)
 
 // make this available to our Node applications
-module.exports = Place;
+module.exports = Place

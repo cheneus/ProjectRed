@@ -23,6 +23,7 @@ const strategy = new GoogleStrategy(
 			}
 			// if there is already someone with that googleId
 			if (userMatch) {
+				console.log('match!!')
 				return done(null, userMatch)
 			} else {
 				// if no user in our db, create a new user with that googleId

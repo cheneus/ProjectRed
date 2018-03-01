@@ -1,31 +1,29 @@
-console.log("ProductRouter R")
+console.log('ProductRouter R')
 
-const express = require('express');
-const bodyParser = require('body-parser');
-
-const db = require("../models");
-const app = express();
+const express = require('express')
+const bodyParser = require('body-parser')
+const db = require('../models')
 
 // const mongoose = require("mongoose");
 // mongoose.Promise = Promise
 
-const productRouter = express.Router();
-productRouter.use(bodyParser.urlencoded({ extended: false }));
-productRouter.use(bodyParser.json());
+const productRouter = express.Router()
+productRouter.use(bodyParser.urlencoded({ extended: false }))
+productRouter.use(bodyParser.json())
 
 productRouter.route('/')
   .get((req, res, next) => {
     db.Product.find({})
-      .then(function(data) {
-        var product = [];
+      .then(function (data) {
+        var product = []
         data.map(x => product.push(x.title))
         res.send(`what is returned ==> ${product}`)
       })
       .catch((err) => {
         // If an error occurred, send it to the client
-        res.json(err);
-      });
-  });
+        res.json(err)
+      })
+  })
 
 productRouter.route('/:title')
   .get((req, res, next) => {
@@ -35,38 +33,38 @@ productRouter.route('/:title')
     // db.Product.findOne({ title: tempTitle })
     db.Product.findOne({ title: req.params.title })
       // ..and populate all of the notes associated with it
-      .populate("comment")
-      .then(function(data) {
-        console.log("data "+data)
+      .populate('comment')
+      .then(function (data) {
+        console.log('data ' + data)
         // res.json(dbProduct);
-        res.render("comment", {comments: data})
+        res.render('comment', { comments: data })
       })
-      .catch(function(err) {
+      .catch(function (err) {
         // If an error occurred, send it to the client
-        res.json(err);
+        res.json(err)
       })
   })
 
   .post((req, res, next) => {
     console.log(req.body)
     db.Comment.create(req.body)
-      .then(function(dbComment) {
+      .then(function (dbComment) {
         // console.log(`this is ${dbComment}`)
-        console.log("title = " +req.params.title)
+        console.log('title = ' + req.params.title)
         console.log(dbComment._id)
         // return db.Product.findOneAndUpdate({ title: req.params.title }, { comment: dbComment._id });
-      return db.Product.findOneAndUpdate({ title: req.params.title }, {$push:{ comment: dbComment._id} }, { new: true });
+        return db.Product.findOneAndUpdate({ title: req.params.title }, { $push: { comment: dbComment._id } }, { new: true })
       })
-      .then(function(dbProduct) {
-        console.log(`doing dbProduct`)
+      .then(function (dbProduct) {
+        console.log('doing dbProduct')
         // If we were able to successfully update an Article, send it back to the client
         // res.json(dbProduct);
-        res.render("comment", {comments: dbProduct})
+        res.render('comment', { comments: dbProduct })
       })
-      .catch(function(err) {
+      .catch(function (err) {
         // If an error occurred, send it to the client
-        res.json(err);
-      });
-  });
+        res.json(err)
+      })
+  })
 
 module.exports = productRouter

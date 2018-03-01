@@ -1,37 +1,42 @@
-import React, { Component } from 'react'
-import logo from './logo.svg'
-import './App.css'
-import axios from 'axios'
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import { Card, CardTitle } from 'material-ui/Card';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import NavBar from './components/Navbar';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch,
+  Redirect
+} from "react-router-dom"
+import Home from './containers/Home.jsx'
+import LoginPage from './containers/LoginPage.jsx'
+import SignUpPage from './containers/SignUpPage.jsx'
+import Login from './components/Login'
 
-class App extends Component {
-	state = {
-		response: ''
-	};
+injectTapEventPlugin();
 
-	componentWillMount() {
-		axios.get('/api/hello')
-			.then(res => this.setState({ response: res.express }))
-			.catch(err => console.log(err))
-	}
+const App = () => (
+  <Router>
+  <MuiThemeProvider>
+ 
+      <div>
+  <NavBar />
+  <Switch>
+    <Route exact path='/' component={Home}/>
+      <Route path='/login' component={Login}/>
+      {/* <Route path='/details' component={Detail}/> */}
+      <Route path='/signup' component={SignUpPage} />
+      <Route component={Home} />
+      </Switch>
+      </div>
 
-	callApi = () => {
-		return 
-	};
+  </MuiThemeProvider>
+  </Router>
+);
 
-	render() {
-		return (
-			<div className="App">
-				<header className="App-header">
-					<img src={logo} className="App-logo" alt="logo" />
-					<h1 className="App-title">Welcome to React</h1>
-					<img src="./img/google-signIn.png" alt="sign-in" onClick={()=> {axios.get('/auth/google')}}/>
-				</header>
-				<p className="App-intro">
-					{this.state.response}
-				</p>
-			</div>
-		)
-	}
-}
-
-export default App
+export default App;
