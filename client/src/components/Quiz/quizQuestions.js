@@ -26,7 +26,7 @@ var quizQuestions = [
                     },
                     {
                         type: 'Tourist',
-                        content: 'Drinks with your closest friends'
+                        content: 'Drinks with friends'
                     },
                     {
                         type: 'Adventurous',

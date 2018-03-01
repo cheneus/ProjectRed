@@ -114,7 +114,6 @@ class App extends Component {
      }
   }
 
-
   handleAnswerSelected = (event) => {
     this.setState({
     answer: event.currentTarget.value
@@ -138,7 +137,32 @@ class App extends Component {
     }
   }
 
-   renderQuiz = () => {
+  handleRetakeButton = (event) => {
+    this.setState({ 
+      result: '',
+      response: [],
+      counter: 0,
+      questionId: 1,
+      counter: 0,
+      answer: '',
+      history: [{
+        questionId: '',
+        answer: ''
+      }],
+      answersCount: {
+       Laidback: 0,
+       Tourist: 0,
+       Adventurous: 0
+      }
+    })
+  }
+
+  handleItinerary = (event) => {
+    console.log('Click happened');
+  }
+
+
+  renderQuiz = () => {
     return (
       <Quiz
         answer={this.state.answer}
@@ -153,13 +177,17 @@ class App extends Component {
     );
   }
 
-  renderResult() {
+  renderResult = () => {
     return (
-      <Result quizResult={this.state.result} />
+      <Result
+        quizResult={this.state.result} 
+        handleRetakeButton={this.handleRetakeButton}
+        handleItinerary={this.handleItinerary}
+      />
     );
   }
   
-  render() {
+  render(App) {
     return (
       <div className="App">
         <header>

@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 
   function Result(props) {
     return (
-     <div> 
-      <div className="llama">
-        You are a <strong>{props.quizResult}</strong> Llama!
+       <div> 
+        <div className="llama">
+          You are a <strong>{props.quizResult}</strong> Llama!
+        </div>
+          <button className="btn btn-primary" type="submit" onClick={props.handleRetakeButton}>Retake Quiz</button>
+          <button className="btn btn-primary" type="submit" onClick={props.handleItinerary}>View Itinerary</button>
       </div>
-        <button className="btn btn-primary" type="submit">Retake Quiz</button>
-        <button className="btn btn-primary" type="submit">View Itinerary</button>
-    </div>
     );
   }
 
