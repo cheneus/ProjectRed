@@ -13,7 +13,10 @@ class App extends Component {
 
    this.state = {
      counter: 0,
-     history: [],
+     history: [{
+      questionId: '',
+      answer: ''
+     }],
      questionId: 1,
      question: '',
      answerOptions: [],
@@ -98,6 +101,10 @@ class App extends Component {
       else {
         this.setUserAnswer()
         this.setState({
+          history: this.state.history.concat([{
+            questionId:this.state.questionId,
+            answer: this.state.answer
+          }]),
           counter: counter,
           questionId: questionId,
           question: quizQuestions[counter].question,
