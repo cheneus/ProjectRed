@@ -1,7 +1,6 @@
 const User = require('../models/User')
 const PassportLocalStrategy = require('passport-local').Strategy;
 
-
 /**
  * Return the Passport Local Strategy object.
  */
@@ -11,6 +10,7 @@ module.exports = new PassportLocalStrategy({
   session: false,
   passReqToCallback: true
 }, (req, email, password, done) => {
+  console.log(req.body)
   const userData = {
     email: email.trim(),
     password: password.trim(),
@@ -18,9 +18,11 @@ module.exports = new PassportLocalStrategy({
   };
 
   const newUser = new User(userData);
-  newUser.save((err) => {
-    if (err) { return done(err); }
-    
+  newUser.save((err, savedUser) => {
+    if (err) {
+      return done(err);
+    }
+    console.log(savedUser);
     return done(null);
   });
 });

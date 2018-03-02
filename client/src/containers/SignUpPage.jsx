@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import SignUpForm from '../components/SignUpForm.jsx';
-import PropTypes from 'prop-types'
+import {Redirect} from 'react-router-dom';
 
 class SignUpPage extends React.Component {
 
@@ -12,6 +12,7 @@ class SignUpPage extends React.Component {
 
     // set the initial component state
     this.state = {
+      redirect: false,
       errors: {},
       user: {
         email: '',
@@ -48,9 +49,44 @@ class SignUpPage extends React.Component {
     // prevent default action. in this case, action is the form submission event
     event.preventDefault();
 
-    console.log('name:', this.state.user.name);
-    console.log('email:', this.state.user.email);
-    console.log('password:', this.state.user.password);
+    // create a string for an HTTP body message
+    const name = encodeURIComponent(this.state.user.name);
+    const email = encodeURIComponent(this.state.user.email);
+    const password = encodeURIComponent(this.state.user.password);
+    const formData = `name=${name}&email=${email}&password=${password}`;
+
+    // create an AJAX request
+    const xhr = new XMLHttpRequest();
+    xhr.open('post', '/auth/signup');
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.responseType = 'json';
+    xhr.addEventListener('load', () => {
+      if (xhr.status === 200) {
+        // success
+
+        // change the component-container state
+        this.setState({
+          errors: {}
+        });
+        
+        // set a message
+        localStorage.setItem('successMessage', xhr.response.message);
+        this.setState({redirect: true});
+        // console.log(xhr.response.message);
+        // make a redirect
+        // this.context.router.replace('/login');
+      } else {
+        // failure
+
+        const errors = xhr.response.errors ? xhr.response.errors : {};
+        errors.summary = xhr.response.message;
+
+        this.setState({
+          errors
+        });
+      }
+    });
+    xhr.send(formData);
   }
 
   /**
@@ -58,12 +94,23 @@ class SignUpPage extends React.Component {
    */
   render() {
     return (
+      // <div>
+      //   signup
+      // </div>
+      <div>
+      {this.state.redirect == false ?(
       <SignUpForm
         onSubmit={this.processForm}
         onChange={this.changeUser}
         errors={this.state.errors}
         user={this.state.user}
       />
+      ):
+      (
+        <Redirect to='/login' />
+      )
+      }
+      </div>
     );
   }
 

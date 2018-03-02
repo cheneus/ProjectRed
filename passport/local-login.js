@@ -1,12 +1,12 @@
 const jwt = require('jsonwebtoken');
 const User = require('../models/User')
-const PassportLocalStrategy = require('passport-local').Strategy;
+const LocalStrategy = require('passport-local').Strategy;
 const config = require('../config');
 
 /**
  * Return the Passport Local Strategy object.
  */
-module.exports = new PassportLocalStrategy({
+const strategy = new LocalStrategy({
   usernameField: 'email',
   passwordField: 'password',
   session: false,
@@ -18,7 +18,8 @@ module.exports = new PassportLocalStrategy({
   };
 
   // find a user by email address
-  return User.findOne({ email: userData.email }, (err, user) => {
+  User.findOne({ email: userData.email }, (err, user) => {
+    console.log("finding email")
     if (err) { return done(err); }
 
     if (!user) {
@@ -27,29 +28,49 @@ module.exports = new PassportLocalStrategy({
 
       return done(error);
     }
-
+    // if (!user.checkPassword(password)) {
+    //   return done(null, false, { message: 'Incorrect password' })
+    // }
     // check if a hashed user's password is equal to a value saved in the database
-    return user.comparePassword(userData.password, (passwordErr, isMatch) => {
-      if (err) { return done(err); }
-
-      if (!isMatch) {
-        const error = new Error('Incorrect email or password');
-        error.name = 'IncorrectCredentialsError';
-
-        return done(error);
-      }
-
+    console.log(password)
+    console.log(user)
+    console.log(userData + " user ")
+    // check the auth @ model method
+    user.checkPassword(userData.password, (err, isMatch) => {
+      if (err) throw (err);
+      if  (isMatch) {
       const payload = {
         sub: user._id
-      };
+      }
 
       // create a token string
       const token = jwt.sign(payload, config.jwtSecret);
       const data = {
-        name: user.name
-      };
-
+        name: user.email
+      }
+      console.log(token)
       return done(null, token, data);
-    });
-  });
-});
+      // res.json(token, data)
+    } else {
+      return done({success: false, msg: "Wrong Password"})
+    }
+      // , (isMatch, err ) => {
+      // console.log("checking")
+      // if (err) { return done(err); }
+
+      // if (!isMatch) {
+      //   const error = new Error('Incorrect email or password');
+      //   error.name = 'IncorrectCredentialsError';
+
+      //   return done(error);
+      // }
+
+     
+      // console.log(token)
+      // // return done(null, token, data);
+    //  }); //checkPassword
+  })
+    // res.json(token, data)
+})
+})
+module.exports = strategy

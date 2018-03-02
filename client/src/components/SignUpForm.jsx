@@ -1,16 +1,16 @@
+// import React, { PropTypes } from 'react';
 import React from 'react';
-import { Link } from 'react-router-dom';
+
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom'
+
+// import { Link } from 'react-router';
 import { Card, CardText } from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
-import PropTypes from 'prop-types'
 
-const SignUpForm = ({
-  onSubmit,
-  onChange,
-  errors,
-  user,
-}) => (
+
+const SignUpForm = ({onSubmit,onChange,errors,user}) => (
   <Card className="container">
     <form action="/" onSubmit={onSubmit}>
       <h2 className="card-heading">Sign Up</h2>
