@@ -78,14 +78,27 @@ class App extends Component {
   handleBackButton = (event) => {
     event.preventDefault()
     console.log("prev")
+    const history = this.state.history
     const counter = this.state.counter - 1;
     const questionId = this.state.questionId -1;
+    const current = this.state.history.splice((this.state.counter-1), 1)
+    // const updatedAnswersCount = update(this.state.answersCount, {
+    //   [this.state.history.answer]: {$apply: (currentValue) => currentValue - 1}
+    // });
+    console.log(current)
     this.setState({
       counter: counter,
       questionId: questionId,
       question: quizQuestions[counter].question,
       answerOptions: quizQuestions[counter].answers,
-      answer: ''
+      answersCount: history[counter].answersCount,
+      answer: history[counter].answer,
+      // history : [current]
+       // history: this.state.history.splice(counter, 0, [{
+       //      questionId:this.state.questionId,
+       //      answer: this.state.answer,
+       //      answersCount: this.state.answersCount 
+       //    }]),
     });
   }
 
@@ -102,7 +115,8 @@ class App extends Component {
         this.setState({
           history: this.state.history.concat([{
             questionId:this.state.questionId,
-            answer: this.state.answer
+            answer: this.state.answer,
+            answersCount: this.state.answersCount 
           }]),
           counter: counter,
           questionId: questionId,
