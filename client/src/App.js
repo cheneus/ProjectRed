@@ -5,6 +5,7 @@ import quizQuestions from './components/Quiz/quizQuestions'
 import NavBar from './components/NavBar'
 import update from 'react-addons-update'
 import Result from './components/Quiz/Result'
+import PropTypes from 'prop-types';
 
 class App extends Component {
 
@@ -22,14 +23,13 @@ class App extends Component {
      answerOptions: [],
      answer: '',
      answersCount: {
-       Laidback: 0,
-       Tourist: 0,
-       Adventurous: 0
+      Laidback: 0,
+      Tourist: 0,
+      Adventurous: 0
      },
      result: '',
      response: []
     };
-
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
   }
 
@@ -83,7 +83,6 @@ class App extends Component {
     this.setState({
       counter: counter,
       questionId: questionId,
-
       question: quizQuestions[counter].question,
       answerOptions: quizQuestions[counter].answers,
       answer: ''
@@ -95,7 +94,7 @@ class App extends Component {
     console.log("next")
     const counter = this.state.counter + 1;
     const questionId = this.state.questionId + 1;
-     if (this.state.questionId === quizQuestions.length) {
+      if (this.state.questionId === quizQuestions.length) {
         setTimeout(() => this.setResults(this.getResults()), 300)
       }
       else {
@@ -111,13 +110,13 @@ class App extends Component {
           answerOptions: quizQuestions[counter].answers,
           answer: ''
         });
-     }
+      }
   }
 
   handleAnswerSelected = (event) => {
     this.setState({
-    answer: event.currentTarget.value
-  });
+      answer: event.currentTarget.value
+    });
   }
 
   getResults = () => {
@@ -125,7 +124,6 @@ class App extends Component {
     const answersCountKeys = Object.keys(answersCount);
     const answersCountValues = answersCountKeys.map((key) => answersCount[key]);
     const maxAnswerCount = Math.max.apply(null, answersCountValues);
-
     return answersCountKeys.filter((key) => answersCount[key] === maxAnswerCount);
   }
 
@@ -160,7 +158,6 @@ class App extends Component {
   handleItinerary = (event) => {
     console.log('Click happened');
   }
-
 
   renderQuiz = () => {
     return (
@@ -197,6 +194,7 @@ class App extends Component {
       </div>
     );
   }
+
 }
 
 export default App;
