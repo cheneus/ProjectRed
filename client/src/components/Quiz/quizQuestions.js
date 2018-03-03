@@ -73,11 +73,11 @@ var quizQuestions = [
         answers: [
                     {
                         type: 'Laidback',
-                        content: 'A book'
+                        content: 'A Book'
                     },
                     {
                         type: 'Tourist',
-                        content: 'My camera'
+                        content: 'My Camera'
                     },
                     {
                         type: 'Adventurous',
@@ -94,7 +94,7 @@ var quizQuestions = [
                     },
                     {
                         type: 'Tourist',
-                        content: 'Browsing a Farmers Market'
+                        content: 'Browsing a farmers market'
                     },
                     {
                         type: 'Adventurous',

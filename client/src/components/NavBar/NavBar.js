@@ -3,7 +3,7 @@ import "./NavBar.css";
 
 const NavBar = () => (
 <div>
-	<img src="/mytraveLlama.jpg" alt="logo" className="img-fluid mx-auto d-block"/>
+	<img src="/mytraveLlama-no.png" alt="logo" className="img-fluid mx-auto d-block"/>
 </div>
 );
 

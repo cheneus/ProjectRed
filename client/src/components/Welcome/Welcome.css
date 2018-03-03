@@ -1,10 +1,28 @@
 .takeQuiz {
 	text-align: center;
-	width: 400px;
+	width: 450px;
 	margin: 0 auto;
+	font-family: 'Josefin Sans', sans-serif;
 }
 
 .quizbtn {
-	width: 50%;
+	width: 60%;
 	color: #ccc;
+	font-size: 1.5rem;
+	background-color: #86cbc6;
+	border-color: #86cbc6;
+	color: #fff;
 }
+
+.quizbtn:hover{
+	background-color: #4daea5;
+	border-color: #4daea5;
+}
+
+h1 {
+	font-family: 'Montserrat', sans-serif;
+}
+
+/*light teal background-color: #a9e0db
+med teal background-color: #86cbc6;
+dark teal background-color: #4daea5 */

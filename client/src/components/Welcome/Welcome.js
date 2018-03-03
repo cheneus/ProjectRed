@@ -6,9 +6,10 @@ import QuizApp from '../../pages/Quiz'
 
 const Welcome = () => (
 	<div>
-	<img src="/mytraveLlama.jpg" alt="logo" className="img-fluid mx-auto d-block"/>
+	<img src="/mytraveLlama-no.png" alt="logo" className="img-fluid mx-auto d-block"/>
+	<h1 className="display-3">Welcome to my traveLlama</h1>
 		<div className="takeQuiz">
-			<h3>Take our quiz to see your travel personality type and more!</h3>
+			<h2>Take our quiz to see your travel personality type and more!</h2>
 	  		<Link to="quiz" className='btn btn-primary quizbtn'>Take me to the quiz</Link>
 		</div>
 	</div>

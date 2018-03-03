@@ -30,9 +30,9 @@ function Quiz(props) {
            {props.answerOptions.map(renderAnswerOptions)}
          </ul>
           <div className="buttons">
-              <button className="btn btn-primary" type="submit" disabled={
+            <button className="btn" type="submit" disabled={
                 (props.questionId===1)} onClick={props.onBackPressed}>Previous</button>
-              <button className="btn btn-primary" type="submit" disabled={!
+            <button className="btn" type="submit" disabled={!
                 (props.answer)} onClick={props.onNextPressed}>Next</button>
           </div>
        </div>
