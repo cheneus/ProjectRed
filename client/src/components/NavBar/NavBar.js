@@ -2,10 +2,8 @@ import React from "react";
 import "./NavBar.css";
 
 const NavBar = () => (
-<div className="jumbotron jumbotron-fluid">
-  <div className="container">
-  	<h1 className="display-3">TraveLlama</h1>
-  </div>
+<div>
+	<img src="/mytraveLlama.jpg" alt="logo" className="img-fluid mx-auto d-block"/>
 </div>
 );
 
