@@ -9,7 +9,7 @@ const Welcome = () => (
 		<img src="/mytraveLlama.jpg" alt="logo" />
 		<div className="takeQuiz">
 			<h3>Take our quiz to see your travel personality type and more!</h3>
-	  		<button className='btn btn-primary quizbtn' type='submit'><Link to="quiz">Take me to the quiz</Link></button>
+	  		<Link to="quiz" className='btn btn-primary quizbtn'>Take me to the quiz</Link>
 		</div>
 	</div>
 );
