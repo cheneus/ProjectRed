@@ -104,10 +104,10 @@ body {
 
 /* Buttons*/
 .btn {
-  background-color: #FFB74D;
+  /*background-color: #FFB74D;*/
   width: 130px;
-  border-color: #FFB74D;
-  margin: 1rem;
+/*  border-color: #FFB74D; */
+margin: 1rem;
   padding: 0.5rem 1rem 0.5rem 1rem;
 }
 
