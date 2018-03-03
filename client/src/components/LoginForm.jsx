@@ -10,7 +10,7 @@ import TextField from 'material-ui/TextField';
 
 
 const LoginForm = ({onSubmit,onChange,errors,successMessage,user}) => (
-  <Card className="container">
+  <div className="container" style={{padding: '10px'}}>
     <form action="/" onSubmit={onSubmit}>
       <h2 className="card-heading">Login</h2> 
 
@@ -44,7 +44,7 @@ const LoginForm = ({onSubmit,onChange,errors,successMessage,user}) => (
 
       <CardText>Don't have an account? <Link to={'/signup'}>Create one</Link>.</CardText>
     </form>
-  </Card>
+  </div>
 );
 
 LoginForm.propTypes = {

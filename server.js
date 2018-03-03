@@ -19,7 +19,7 @@ const authRouter = require('./route/authRouter')
 // passport Strategy
 const localSignupStrategy = require('./passport/local-signup');
 const localLoginStrategy = require('./passport/local-login');
-const localStrategy = require('./passport/localStrategy')
+// const localStrategy = require('./passport/localStrategy')
 // Use morgan logger for logging requests
 app.use(logger('dev'))
 // Use body-parser for handling form submissions

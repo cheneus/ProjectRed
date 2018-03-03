@@ -1,11 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { Redirect } from 'react-router-dom';
+import { Card } from 'material-ui/Card';
 import LoginForm from '../components/LoginForm';
 import Auth from '../modules/Auth';
-import {Redirect} from 'react-router-dom';
-import PropTypes from 'prop-types';
 
 class LoginPage extends React.Component {
-
   /**
    * Class constructor.
    */
@@ -28,8 +28,8 @@ class LoginPage extends React.Component {
       successMessage,
       user: {
         email: '',
-        password: ''
-      }
+        password: '',
+      },
     };
 
     this.processForm = this.processForm.bind(this);
@@ -49,7 +49,7 @@ class LoginPage extends React.Component {
     const email = encodeURIComponent(this.state.user.email);
     const password = encodeURIComponent(this.state.user.password);
     const formData = `email=${email}&password=${password}`;
-    console.log(formData)
+    console.log(formData);
     // create an AJAX request
     const xhr = new XMLHttpRequest();
     xhr.open('post', '/auth/login');
@@ -58,18 +58,18 @@ class LoginPage extends React.Component {
     xhr.addEventListener('load', () => {
       if (xhr.status === 200) {
         // success
-        console.log("if")
+        console.log('if');
         // change the component-container state
         this.setState({
-          errors: {}
+          errors: {},
         });
 
         // save the token
-        Auth.authenticateUser(xhr.response.token);
-
-
+        console.log(xhr.response.token)
+        localStorage.setItem('token', xhr.response.token)
+        // Auth.authenticateUser(xhr.response.token);
         localStorage.setItem('usrname', JSON.stringify(xhr.response.user));
-        
+
         console.log(JSON.parse(localStorage.getItem('usrname')).name);
         // if(xhr.response.user)
         // {
@@ -79,20 +79,20 @@ class LoginPage extends React.Component {
         //   console.log('after signin no user returned');
 
         // }
-        this.setState({redirect: true});
+        this.setState({ redirect: true });
         // change the current URL to /
         // this.context.router.replace('/');
       } else {
         // failure
-        console.log("else")
+        console.log('else');
         // change the component state
-        console.log(xhr.response)
+        console.log(xhr.response);
         // const errors = xhr.response.errors ? xhr.response.errors : {};
         // errors.summary = xhr.response.message;
-        const errors = "something happened"
+        const errors = 'something happened';
 
         this.setState({
-          errors
+          errors,
         });
       }
     });
@@ -110,7 +110,7 @@ class LoginPage extends React.Component {
     user[field] = event.target.value;
 
     this.setState({
-      user
+      user,
     });
   }
 
@@ -119,23 +119,16 @@ class LoginPage extends React.Component {
    */
   render() {
     return (
-      <div>
-      {this.state.redirect == false? (   
-      <LoginForm
-        onSubmit={this.processForm}
-        onChange={this.changeUser}
-        errors={this.state.errors}
-        successMessage={this.state.successMessage}        
-        user={this.state.user}
-      />):(
-        <Redirect to='/' />
-        
-      )
-      }
-      </div>
+      <Card>
+        {this.state.redirect === false ? (
+          <LoginForm onSubmit={this.processForm}onChange={this.changeUser}errors={this.state.errors}successMessage={this.state.successMessage} user={this.state.user} />) : (
+            <Redirect to="/dashboard" />
+
+      )}
+      </Card>
+
     );
   }
-
 }
 
 export default LoginPage;

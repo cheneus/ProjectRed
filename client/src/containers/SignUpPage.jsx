@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react';
 import SignUpForm from '../components/SignUpForm.jsx';
-import {Redirect} from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
+import { Card } from 'material-ui/Card';
 
 class SignUpPage extends React.Component {
-
   /**
    * Class constructor.
    */
@@ -17,8 +17,8 @@ class SignUpPage extends React.Component {
       user: {
         email: '',
         name: '',
-        password: ''
-      }
+        password: '',
+      },
     };
 
     this.processForm = this.processForm.bind(this);
@@ -36,7 +36,7 @@ class SignUpPage extends React.Component {
     user[field] = event.target.value;
 
     this.setState({
-      user
+      user,
     });
   }
 
@@ -66,12 +66,12 @@ class SignUpPage extends React.Component {
 
         // change the component-container state
         this.setState({
-          errors: {}
+          errors: {},
         });
-        
+
         // set a message
         localStorage.setItem('successMessage', xhr.response.message);
-        this.setState({redirect: true});
+        this.setState({ redirect: true });
         // console.log(xhr.response.message);
         // make a redirect
         // this.context.router.replace('/login');
@@ -82,7 +82,7 @@ class SignUpPage extends React.Component {
         errors.summary = xhr.response.message;
 
         this.setState({
-          errors
+          errors,
         });
       }
     });
@@ -94,26 +94,22 @@ class SignUpPage extends React.Component {
    */
   render() {
     return (
-      // <div>
-      //   signup
-      // </div>
-      <div>
-      {this.state.redirect == false ?(
-      <SignUpForm
-        onSubmit={this.processForm}
-        onChange={this.changeUser}
-        errors={this.state.errors}
-        user={this.state.user}
-      />
-      ):
+      <Card>
+        {this.state.redirect === false ? (
+          <SignUpForm
+            onSubmit={this.processForm}
+            onChange={this.changeUser}
+            errors={this.state.errors}
+            user={this.state.user}
+          />
+      ) :
       (
-        <Redirect to='/login' />
+        <Redirect to="/login" />
       )
       }
-      </div>
+      </Card>
     );
   }
-
 }
 
 export default SignUpPage;

@@ -1,18 +1,14 @@
-// import React, { PropTypes } from 'react';
-import React from 'react';
-
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom'
-
+import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 // import { Link } from 'react-router';
-import { Card, CardText } from 'material-ui/Card';
-import RaisedButton from 'material-ui/RaisedButton';
-import TextField from 'material-ui/TextField';
+import { Card, CardText } from "material-ui/Card";
+import RaisedButton from "material-ui/RaisedButton";
+import TextField from "material-ui/TextField";
 
-
-const SignUpForm = ({onSubmit,onChange,errors,user}) => (
-  <Card className="container">
-    <form action="/" onSubmit={onSubmit}>
+const SignUpForm = ({ onSubmit, onChange, errors, user }) => (
+  <div className="container">
+    <form action="/" onSubmit={onSubmit} style={{padding: '10px'}}>
       <h2 className="card-heading">Sign Up</h2>
 
       {errors.summary && <p className="error-message">{errors.summary}</p>}
@@ -52,9 +48,11 @@ const SignUpForm = ({onSubmit,onChange,errors,user}) => (
         <RaisedButton type="submit" label="Create New Account" primary />
       </div>
 
-      <CardText>Already have an account? <Link to={'/login'}>Log in</Link></CardText>
+      <CardText>
+        Already have an account? <Link to={"/login"}>Log in</Link>
+      </CardText>
     </form>
-  </Card>
+  </div>
 );
 
 SignUpForm.propTypes = {

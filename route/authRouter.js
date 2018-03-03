@@ -4,6 +4,8 @@ const express = require('express')
 const router = express.Router()
 const User = require('../models/User')
 const passport = require('../passport')
+const jwt =require('jsonwebtoken')
+const config = require('../config')
 
 const validateSignupForm =(payload)=> {
   const errors = {}
@@ -109,7 +111,7 @@ router.post('/login',
         message: 'Could not process the form.'
       })
 		}
-		console.log(res.body)
+		console.log("being done")
   return res.json({
       success: true,
       message: 'You have successfully logged in!',
@@ -154,6 +156,21 @@ router.post('/signup', (req, res) => {
 			return res.json(savedUser)
 		})
 	})
+})
+
+router.get('/dashboard', (req, res) => {
+	var token = req.headers['x-access-token'];
+  if (!token) return res.status(401).send({ auth: false, message: 'No token provided.' });
+	console.log("dash")
+	// jwt.verify(token, config.jwtSecret, function(err, decoded) {
+  //   if (err) return res.status(500).send({ auth: false, message: 'Failed to authenticate token.' });
+    
+		// res.status(200).send(decoded);
+		res.status(200).json({
+			message: "SEE IT NOW"
+		})
+  });
+	
 })
 
 module.exports = router
