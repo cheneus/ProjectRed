@@ -10,11 +10,14 @@ import Auth from '../modules/Auth';
 
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
-  <Route {...rest} render={(props) => (
+  <Route
+    {...rest}
+    render={props => (
     (Auth.isUserAuthenticated()) === true
       ? <Component {...props} />
-      : <Redirect to='/login' />
-  )} />
-)
+      : <Redirect to="/login" />
+  )}
+  />
+);
 
 export default PrivateRoute;

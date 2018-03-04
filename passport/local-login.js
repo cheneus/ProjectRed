@@ -12,11 +12,14 @@ const strategy = new LocalStrategy({
   session: false,
   passReqToCallback: true
 }, (req, email, password, done) => {
+  console.log("inside local-login")
+  console.log(req.body)
   const userData = {
     email: email.trim(),
     password: password.trim()
   };
-
+  console.log(userData)
+  console.log("**********")
   // find a user by email address
   User.findOne({ email: userData.email }, (err, user) => {
     console.log("finding email")
@@ -38,17 +41,19 @@ const strategy = new LocalStrategy({
     // check the auth @ model method
     user.checkPassword(userData.password, (err, isMatch) => {
       if (err) throw (err);
-      if  (isMatch) {
+      if (isMatch) {
       const payload = {
         sub: user._id
       }
 
       // create a token string
-      const token = jwt.sign(payload, config.jwtSecret);
+      const token = jwt.sign(payload, config.jwtSecret,  {
+        expiresIn: 86400 // expires in 24 hours
+      });
       const data = {
         name: user.email
       }
-      console.log(token)
+      console.log("token = " + token)
       return done(null, token, data);
       // res.json(token, data)
     } else {
@@ -64,13 +69,7 @@ const strategy = new LocalStrategy({
 
       //   return done(error);
       // }
-
-     
-      // console.log(token)
-      // // return done(null, token, data);
-    //  }); //checkPassword
   })
-    // res.json(token, data)
 })
 })
 module.exports = strategy

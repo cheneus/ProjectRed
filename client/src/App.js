@@ -5,7 +5,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import { Card, CardTitle } from 'material-ui/Card';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import MyNavBar from './components/Navbar';
+import NavBar from './components/bootstrap/navbar/Navbar';
 import {
   Router,
   Route,
@@ -27,7 +27,7 @@ const App = () => (
   <Router history={history}>
     <MuiThemeProvider>
       <div className="container">
-        <MyNavBar />
+        <NavBar />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/login" component={LoginPage} />

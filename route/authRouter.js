@@ -38,6 +38,15 @@ const validateSignupForm =(payload)=> {
   }
 }
 
+// router.use('/login', (req, res, next) => {
+// 	console.log("middle")
+// 	passport.authenticate('local-login', (err, user, info)=> {
+// 		console.log(user)
+// 		console.log(info)
+// 	})
+//   next()
+// })
+
 router.get('/google', passport.authenticate('google', {session:false, scope: ['profile', 'email'] }))
 router.get('/google/callback',
 	passport.authenticate('google', {
@@ -84,19 +93,7 @@ router.post('/login',
 		console.log(req.body)
 		console.log('================')
 		console.log('next')
-		
-	// passport.authenticate('local'),
-	// (req, res) => {
-	// 	console.log('POST to /login')
-	// 	const user = JSON.parse(JSON.stringify(req.user)) // hack
-	// 	const cleanUser = Object.assign({}, user)
-	// 	if (cleanUser.local) {
-	// 		console.log(`Deleting ${cleanUser.local.password}`)
-	// 		delete cleanUser.local.password
-	// 	}
-	// 	res.json({ user: cleanUser })
-	// }
-	
+		// next()	
 	passport.authenticate('local-login', (err, token, userData) => {
 		if (err) {
 			console.log('working err')
@@ -104,21 +101,24 @@ router.post('/login',
         res.status(400).json({
           success: false,
           message: err.message
-        })
-			}
+				})
+			
        res.status(400).json({
         success: false,
         message: 'Could not process the form.'
       })
 		}
+	}
 		console.log("being done")
-  return res.json({
+  // res.json({
+		console.log(token)
+		console.log(userData)
+		res.json({
       success: true,
       message: 'You have successfully logged in!',
       token,
       user: userData
 		})
-	
 	})(req, res, next)
 })
 
@@ -158,19 +158,18 @@ router.post('/signup', (req, res) => {
 	})
 })
 
-router.get('/dashboard', (req, res) => {
-	var token = req.headers['x-access-token'];
-  if (!token) return res.status(401).send({ auth: false, message: 'No token provided.' });
-	console.log("dash")
-	// jwt.verify(token, config.jwtSecret, function(err, decoded) {
-  //   if (err) return res.status(500).send({ auth: false, message: 'Failed to authenticate token.' });
+// router.get('/dashboard', (req, res) => {
+// 	var token = req.headers['x-access-token'];
+//   if (!token) return res.status(401).send({ auth: false, message: 'No token provided.' });
+// 	console.log("dash")
+// 	jwt.verify(token, config.jwtSecret, function(err, decoded) {
+//     if (err) return res.status(500).send({ auth: false, message: 'Failed to authenticate token.' });
     
-		// res.status(200).send(decoded);
-		res.status(200).json({
-			message: "SEE IT NOW"
-		})
-  });
-	
-})
+// 		// res.status(200).send(decoded);
+// 		res.status(200).json({
+// 			message: "SEE IT NOW"
+// 		})
+//   })
+// })
 
 module.exports = router

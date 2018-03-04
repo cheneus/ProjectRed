@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom';
 import { Card } from 'material-ui/Card';
 import LoginForm from '../components/LoginForm';
 import Auth from '../modules/Auth';
+import axios from 'axios';
 
 class LoginPage extends React.Component {
   /**
@@ -46,57 +47,82 @@ class LoginPage extends React.Component {
     event.preventDefault();
 
     // create a string for an HTTP body message
+    // const email = encodeURIComponent(this.state.user.email);
     const email = encodeURIComponent(this.state.user.email);
     const password = encodeURIComponent(this.state.user.password);
     const formData = `email=${email}&password=${password}`;
+    console.log('=========');
     console.log(formData);
+    console.log('=========');
     // create an AJAX request
-    const xhr = new XMLHttpRequest();
-    xhr.open('post', '/auth/login');
-    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    xhr.responseType = 'json';
-    xhr.addEventListener('load', () => {
-      if (xhr.status === 200) {
-        // success
-        console.log('if');
-        // change the component-container state
-        this.setState({
-          errors: {},
-        });
-
-        // save the token
-        console.log(xhr.response.token)
-        localStorage.setItem('token', xhr.response.token)
-        // Auth.authenticateUser(xhr.response.token);
-        localStorage.setItem('usrname', JSON.stringify(xhr.response.user));
-
-        console.log(JSON.parse(localStorage.getItem('usrname')).name);
-        // if(xhr.response.user)
-        // {
-        //   console.log(xhr.response.user);
-        // }
-        // else{
-        //   console.log('after signin no user returned');
-
-        // }
-        this.setState({ redirect: true });
-        // change the current URL to /
-        // this.context.router.replace('/');
-      } else {
-        // failure
-        console.log('else');
-        // change the component state
-        console.log(xhr.response);
-        // const errors = xhr.response.errors ? xhr.response.errors : {};
-        // errors.summary = xhr.response.message;
-        const errors = 'something happened';
-
-        this.setState({
-          errors,
-        });
-      }
+    axios.post('/auth/login', formData
+      // , {
+      //   header: {
+      //     accept: 'application/json',
+      //     'Content-Type': 'application/x-www-form-urlencoded',
+      //     responseType: 'json',
+      //   },
+      //   data: {
+      //     email,
+      //     password,
+      //   },
+      // },
+    ).then((res) => {
+      console.log(res.data);
+      const token = res.data.token;
+      const usrname = JSON.stringify(res.data.user);
+      localStorage.setItem('token', res.data.token);
+      localStorage.setItem('usrname', res.data.user);
+      this.setState({ redirect: true });
+    }).catch((err) => {
+      console.log(err);
     });
-    xhr.send(formData);
+    // const xhr = new XMLHttpRequest();
+    // xhr.open('post', '/auth/login');
+    // xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    // xhr.responseType = 'json';
+    // xhr.addEventListener('load', () => {
+    //   if (xhr.status === 200) {
+    //     // success
+    //     console.log('if');
+    //     // change the component-container state
+    //     // this.setState({
+    //     //   errors: {},
+    //     // });
+
+    //     // save the token
+    //     console.log(xhr.response.token);
+    //     localStorage.setItem('token', xhr.response.token);
+    //     // Auth.authenticateUser(xhr.response.token);
+    //     localStorage.setItem('usrname', JSON.stringify(xhr.response.user));
+
+    //     console.log(JSON.parse(localStorage.getItem('usrname')).name);
+    //     // if(xhr.response.user)
+    //     // {
+    //     //   console.log(xhr.response.user);
+    //     // }
+    //     // else{
+    //     //   console.log('after signin no user returned');
+
+    //     // }
+    //     this.setState({ redirect: true });
+    //     // change the current URL to /
+    //     // this.context.router.replace('/');
+    //   } else {
+    //     // failure
+    //     console.log('else');
+    //     // change the component state
+    //     console.log(xhr.response);
+    //     // const errors = xhr.response.errors ? xhr.response.errors : {};
+    //     // errors.summary = xhr.response.message;
+    //     const errors = 'something happened';
+
+    //     this.setState({
+    //       errors,
+    //     });
+    //   }
+    // });
+    // xhr.send(formData);
   }
 
   /**

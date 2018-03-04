@@ -2,6 +2,7 @@ console.log('profileRoute R')
 
 const express = require('express')
 const profileRouter = express.Router()
+const Verify = require('../passport/verify')
 
 profileRouter.route('/')
   .get((req, res, next) => {

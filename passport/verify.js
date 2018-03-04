@@ -1,9 +1,12 @@
-var User = require('../models/user');
+var User = require('../models/User');
 var jwt = require('jsonwebtoken'); // used to create, sign, and verify tokens
 var config = require('../config.js');
 
 exports.verifyUser = function(req, res, next) {
   // check header or url parameters or post parameters for token
+  if (!req.headers.authorization) {
+    return res.status(401).end();
+  }
   var token = req.body.token || req.query.token || req.headers['x-access-token'];
 
   // decode token
@@ -18,7 +21,7 @@ exports.verifyUser = function(req, res, next) {
               // if everything is good, save to request for use in other routes
               req.decoded = decoded;
               next();
-          }
+         }
       });
   } else {
       // if there is no token

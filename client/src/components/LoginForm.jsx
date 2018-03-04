@@ -8,7 +8,6 @@ import { Card, CardText } from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 
-
 const LoginForm = ({onSubmit,onChange,errors,successMessage,user}) => (
   <div className="container" style={{padding: '10px'}}>
     <form action="/" onSubmit={onSubmit}>
