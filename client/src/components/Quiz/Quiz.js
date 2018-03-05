@@ -3,6 +3,8 @@ import Question from './Question';
 import QuestionCount from './QuestionCount';
 import AnswerOption from './AnswerOption';
 import PropTypes from 'prop-types';
+import NavBar from '../NavBar'
+
 
 function Quiz(props) {
 
@@ -20,22 +22,27 @@ function Quiz(props) {
   }
 
     return (
-       <div className="quiz">
-         <QuestionCount
-           counter={props.questionId}
-           total={props.questionTotal}
-         />
-         <Question content={props.question} />
-         <ul className="answerOptions">
-           {props.answerOptions.map(renderAnswerOptions)}
-         </ul>
-          <div className="buttons">
-            <button className="btn" type="submit" disabled={
-                (props.questionId===1)} onClick={props.onBackPressed}>Previous</button>
-            <button className="btn" type="submit" disabled={!
-                (props.answer)} onClick={props.onNextPressed}>Next</button>
-          </div>
-       </div>
+      <div>
+        <NavBar />
+        <div className="quiz">
+           <div>
+                <QuestionCount
+                  counter={props.questionId}
+                  total={props.questionTotal}
+                />
+                <Question content={props.question} />
+                    <ul className="answerOptions">
+                      {props.answerOptions.map(renderAnswerOptions)}
+                    </ul>
+            </div>
+            <div className="buttons">
+                <button className="btn" type="submit" disabled={
+                    (props.questionId===1)} onClick={props.onBackPressed}>Previous</button>
+                <button className="btn" type="submit" disabled={!
+                    (props.answer)} onClick={props.onNextPressed}>Next</button>
+            </div>
+        </div>
+        </div>
     );
   }
 

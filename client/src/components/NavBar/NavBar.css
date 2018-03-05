@@ -1,9 +1,18 @@
-.jumbotron {
-  background-color: #4DD0E1;
-  color: white;
-  margin-bottom: 30px
+.navlogo {
+  max-width: 20%;
+  max-height: 20%;
+  text-align: left;
 }
 
-.display-3 {
-	text-align: center;
+.lil_logo{
+	max-width: 790px;
+	margin: 0 auto;
+	margin-top: 100px;
+	margin-bottom: 3px;
+}
+
+@media (min-width: 769px){
+	.container {
+		margin: 0.5rem auto;
+	}
 }

@@ -21,6 +21,12 @@
 
 h1 {
 	font-family: 'Montserrat', sans-serif;
+	text-align: center;
+	margin-top: -15px;
+}
+
+.wlogo {
+	margin-top: 10px;
 }
 
 /*light teal background-color: #a9e0db

@@ -4,9 +4,10 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import QuizApp from '../../pages/Quiz'
 
 
+
 const Welcome = () => (
-	<div>
-	<img src="/mytraveLlama-no.png" alt="logo" className="img-fluid mx-auto d-block"/>
+	<div className="back">
+	<img src="/logo_resize.png" alt="logo" className="wlogo img-fluid mx-auto d-block"/>
 	<h1 className="display-3">Welcome to my traveLlama</h1>
 		<div className="takeQuiz">
 			<h2>Take our quiz to see your travel personality type and more!</h2>

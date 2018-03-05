@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
   function Result(props) {
     return (
-       <div> 
+       <div className="resultp"> 
         <div className="llama">
           You are a <strong>{props.quizResult}</strong> Llama!
         </div>

@@ -2,8 +2,8 @@ import React from "react";
 import "./NavBar.css";
 
 const NavBar = () => (
-<div>
-	<img src="/mytraveLlama-no.png" alt="logo" className="img-fluid mx-auto d-block"/>
+<div className="lil_logo">
+	<img src="/myLlama_updated.png" alt="logo" className="navlogo img img-fluid"/>
 </div>
 );
 

@@ -8,7 +8,6 @@ import update from 'react-addons-update'
 import Result from './../../components/Quiz/Result'
 import PropTypes from 'prop-types'
 
-
 class QuizApp extends Component {
 
   constructor(props) {
@@ -203,9 +202,7 @@ class QuizApp extends Component {
   render(QuizApp) {
     return (
       <div className="App">
-        <header>
-          <NavBar />
-        </header>
+
         {this.state.result ? this.renderResult() : this.renderQuiz()}
       </div>
     );

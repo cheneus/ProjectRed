@@ -54,7 +54,7 @@ body {
 }
 
 .answerOption:hover {
-  background-color: #eefbfe;
+  background-color: #d2e9e7;
 }
 
 .radioCustomButton {
@@ -126,6 +126,14 @@ body {
     font-size: 16px;
     line-height: 1;
 }
+
+.resultp {
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+
 
 /* Animation */
 .fade-enter {
