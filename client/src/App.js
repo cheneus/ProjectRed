@@ -13,24 +13,27 @@ import {
   Switch,
   Redirect,
 } from 'react-router-dom';
-import PrivateRoute from './modules/protected.js';
-import Home from './containers/Home.jsx';
-import LoginPage from './containers/LoginPage.jsx';
-import SignUpPage from './containers/SignUpPage.jsx';
-import DashboardPage from './containers/Dashboard.jsx';
+import PrivateRoute from './modules/protected';
+import Home from './containers/Home';
+import LoginPage from './containers/LoginPage';
+import SignUpPage from './containers/SignUpPage';
+import DashboardPage from './containers/Dashboard';
 // import Login from './components/Login';
 import history from './modules/history';
+import QuizPage from './containers/QuizPage';
 
 injectTapEventPlugin();
 
 const App = () => (
   <Router history={history}>
     <MuiThemeProvider>
+    <NavBar />
       <div className="container">
-        <NavBar />
+
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/login" component={LoginPage} />
+          <Route path="/quiz" component={QuizPage} />
           {/* <Route path='/details' component={Detail}/> */}
           <Route path="/signup" component={SignUpPage} />
           <Route path="/dashboard" component={DashboardPage} />

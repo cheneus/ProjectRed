@@ -9,9 +9,12 @@ import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 
 const LoginForm = ({onSubmit,onChange,errors,successMessage,user}) => (
-  <div className="container" style={{padding: '10px'}}>
-    <form action="/" onSubmit={onSubmit}>
-      <h2 className="card-heading">Login</h2> 
+  <div className="card" style={{padding: '10px'}}>
+    {/* <h3 className="card-header"> Welcome back to TraveLlama </h3> */}
+    <div className="card-block">
+    <h2 className="card-header">Login</h2> 
+    <form action="/" className="form-control" onSubmit={onSubmit}>
+
 
       {successMessage && <p className="success-message">{successMessage}</p>}
       {errors.summary && <p className="error-message">{errors.summary}</p>}
@@ -43,6 +46,7 @@ const LoginForm = ({onSubmit,onChange,errors,successMessage,user}) => (
 
       <CardText>Don't have an account? <Link to={'/signup'}>Create one</Link>.</CardText>
     </form>
+    </div>
   </div>
 );
 
