@@ -20,13 +20,12 @@ class LoginPage extends React.Component {
       successMessage = storedMessage;
       localStorage.removeItem('successMessage');
     }
-
-
     // set the initial component state
     this.state = {
       redirect: false,
       errors: {},
       successMessage,
+      token: '',
       user: {
         email: '',
         password: '',
@@ -69,11 +68,15 @@ class LoginPage extends React.Component {
       // },
     ).then((res) => {
       console.log(res.data);
+      console.log(`incoming res.data`)
+      const data = res.data
+      console.log(data)
       const token = res.data.token;
       const usrname = JSON.stringify(res.data.user);
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('usrname', res.data.user);
       this.setState({ redirect: true });
+      this.setState({token: res.data.token})
     }).catch((err) => {
       console.log(err);
     });
