@@ -145,13 +145,15 @@ class LoginPage extends React.Component {
    */
   render() {
     return (
-      <Card>
+
+      <div className="col-lg-6 offset-lg-3">
         {this.state.redirect === false ? (
           <LoginForm onSubmit={this.processForm}onChange={this.changeUser}errors={this.state.errors}successMessage={this.state.successMessage} user={this.state.user} />) : (
             <Redirect to="/dashboard" />
 
       )}
-      </Card>
+
+      </div>
 
     );
   }
