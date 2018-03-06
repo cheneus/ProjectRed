@@ -3,7 +3,7 @@ import Question from './Question';
 import QuestionCount from './QuestionCount';
 import AnswerOption from './AnswerOption';
 import PropTypes from 'prop-types';
-import NavBar from '../NavBar'
+import Logo from '../Logo'
 
 
 function Quiz(props) {
@@ -23,7 +23,7 @@ function Quiz(props) {
 
     return (
       <div>
-        <NavBar />
+        <Logo />
         <div className="quiz">
            <div>
                 <QuestionCount
