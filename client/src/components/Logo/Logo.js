@@ -1,9 +1,11 @@
 import React from "react";
 import "./Logo.css";
+import { BrowserRouter, Route, Link } from 'react-router-dom'
 
 const Logo = () => (
 <div className="lil_logo">
-	<img src="/myLlama_updated.png" alt="logo" className="navlogo img img-fluid"/>
+	<Link to="/"><img src="/myLlama_updated.png" alt="logo" className="navlogo img img-fluid"/>
+	  	</Link>
 </div>
 );
 

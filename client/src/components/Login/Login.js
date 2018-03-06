@@ -10,9 +10,9 @@ class Login extends Component {
 			<div className="login">
 			<NavBar />
 				<div className="userinfo">
-					<h3>Name: </h3>
-					<h3>Email: </h3>
-					<h3>Past Results: </h3>
+					<h4>Name: </h4>
+					<h4>Email: </h4>
+					<h4>Past Results: </h4>
 				</div>
 			</div>
 		);
