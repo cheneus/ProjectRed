@@ -203,7 +203,7 @@ class QuizPage extends Component {
 
   render() {
     return (
-      <div className="card">
+      <div>
         {this.state.result ? this.renderResult() : this.renderQuiz()}
       </div>
     );

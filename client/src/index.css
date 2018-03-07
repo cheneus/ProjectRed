@@ -54,7 +54,7 @@ body {
 }
 
 .answerOption:hover {
-  background-color: #eefbfe;
+  background-color: #d2e9e7;
 }
 
 .radioCustomButton {
@@ -97,23 +97,24 @@ body {
 
 .radioCustomButton:checked ~ .radioCustomLabel:before {
     content: '';
-    background: #8BC53F url(./components/Quiz/icon-check.svg) no-repeat;
+    background: #4daea5 url(./components/Quiz/icon-check.svg) no-repeat;
     background-size: 27px;
-    border-color: #8BC53F;
+    border-color: #4daea5;
 }
 
 /* Buttons*/
 .btn {
-  /*background-color: #FFB74D;*/
+  background-color: #86cbc6;
+  border-color: #86cbc6;
+  color: #fff;
   width: 130px;
-/*  border-color: #FFB74D; */
-margin: 1rem;
+  margin: 1rem;
   padding: 0.5rem 1rem 0.5rem 1rem;
 }
 
 .btn:hover{
-  background-color: #FF5722;
-  border-color: #FFB74D;
+  background-color: #4daea5;
+  border-color: #4daea5;
 }
 
 .buttons {
@@ -125,6 +126,14 @@ margin: 1rem;
     font-size: 16px;
     line-height: 1;
 }
+
+.resultp {
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+
 
 /* Animation */
 .fade-enter {

@@ -1,26 +1,33 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 // import { Link } from 'react-router';
-import { Card, CardText } from "material-ui/Card";
-import RaisedButton from "material-ui/RaisedButton";
-import TextField from "material-ui/TextField";
+import { Card, CardText } from 'material-ui/Card';
+import RaisedButton from 'material-ui/RaisedButton';
+import TextField from 'material-ui/TextField';
 
-const SignUpForm = ({ onSubmit, onChange, errors, user }) => (
+const SignUpForm = ({
+  processForm, onChange, errors, user,
+}) => (
   <div className="container">
-    <form action="/" onSubmit={onSubmit} style={{padding: '10px'}}>
+    <form action="/" onSubmit={processForm} style={{ padding: '10px' }}>
       <h2 className="card-heading">Sign Up</h2>
 
       {errors.summary && <p className="error-message">{errors.summary}</p>}
 
       <div className="field-line">
         <TextField
-          floatingLabelText="Name"
-          name="name"
-          errorText={errors.name}
-          onChange={onChange}
-          value={user.name}
+          hintText="Enter your First Name"
+          floatingLabelText="First Name"
+          onChange={(event, newValue) => this.setState({ first_name: newValue })}
         />
+        <br />
+        <TextField
+          hintText="Enter your Last Name"
+          floatingLabelText="Last Name"
+          onChange={(event, newValue) => this.setState({ last_name: newValue })}
+        />
+        <br />
       </div>
 
       <div className="field-line">
@@ -49,7 +56,7 @@ const SignUpForm = ({ onSubmit, onChange, errors, user }) => (
       </div>
 
       <CardText>
-        Already have an account? <Link to={"/login"}>Log in</Link>
+        Already have an account? <Link to="/login">Log in</Link>
       </CardText>
     </form>
   </div>
@@ -59,7 +66,7 @@ SignUpForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
   errors: PropTypes.object.isRequired,
-  user: PropTypes.object.isRequired
+  user: PropTypes.object.isRequired,
 };
 
 export default SignUpForm;

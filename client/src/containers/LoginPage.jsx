@@ -3,13 +3,11 @@ import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 import { Card } from 'material-ui/Card';
 import LoginForm from '../components/LoginForm';
+import Dashboard from '../containers/Dashboard';
 import Auth from '../modules/Auth';
 import axios from 'axios';
 
 class LoginPage extends React.Component {
-  /**
-   * Class constructor.
-   */
   constructor(props) {
     super(props);
 
@@ -25,6 +23,7 @@ class LoginPage extends React.Component {
       redirect: false,
       errors: {},
       successMessage,
+      userData: '',
       token: '',
       user: {
         email: '',
@@ -69,14 +68,20 @@ class LoginPage extends React.Component {
     ).then((res) => {
       console.log(res.data);
       console.log(`incoming res.data`)
-      const data = res.data
-      console.log(data)
-      const token = res.data.token;
-      const usrname = JSON.stringify(res.data.user);
+      
+      const jwttoken = JSON.stringify(res.data.token);
+      console.log(typeof res.data.token)
+      const user = JSON.stringify(res.data.user);
       localStorage.setItem('token', res.data.token);
-      localStorage.setItem('usrname', res.data.user);
-      this.setState({ redirect: true });
+      localStorage.setItem('usrname', user);
+      console.log(localStorage)
       this.setState({token: res.data.token})
+      if (!localStorage.getItem('token')) {
+        localStorage.setItem('token', this.state.userData.token);
+        console.log(localStorage.getItem('token'))
+      } else {
+      this.setState({ redirect: true });
+      }
     }).catch((err) => {
       console.log(err);
     });
@@ -152,8 +157,7 @@ class LoginPage extends React.Component {
       <div className="col-lg-6 offset-lg-3">
         {this.state.redirect === false ? (
           <LoginForm onSubmit={this.processForm}onChange={this.changeUser}errors={this.state.errors}successMessage={this.state.successMessage} user={this.state.user} />) : (
-            <Redirect to="/dashboard" />
-
+            <Dashboard />
       )}
 
       </div>

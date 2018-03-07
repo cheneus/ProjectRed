@@ -7,7 +7,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import NavBar from './components/bootstrap/navbar/Navbar';
 import {
-  Router,
+  BrowserRouter as Router,
   Route,
   Link,
   Switch,
@@ -25,16 +25,14 @@ import QuizPage from './containers/QuizPage';
 injectTapEventPlugin();
 
 const App = () => (
-  <Router history={history}>
+  <Router>
     <MuiThemeProvider>
     <NavBar />
       <div className="container">
-
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/login" component={LoginPage} />
           <Route path="/quiz" component={QuizPage} />
-          {/* <Route path='/details' component={Detail}/> */}
           <Route path="/signup" component={SignUpPage} />
           <Route path="/dashboard" component={DashboardPage} />
           {/* <PrivateRoute path="/dashboard" component={DashboardPage} /> */}

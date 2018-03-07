@@ -13,9 +13,9 @@ import "./navbar.css";
 const NavBar = () => (
   <div className="jumbotron">
     <nav className="navbar navbar-expand-lg">
-      <h1 className="navbar-brand">
-        <a href="/">TraveLlama</a>
-      </h1>
+      <a className="navbar-brand">
+      <img src="img/myLlama_updated.png" alt="logo" className="blogo img img-fluid"/>
+      </a>
       <button
         className="navbar-toggler navbar-toggler-right"
         type="button"
@@ -49,7 +49,7 @@ const NavBar = () => (
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="register">
+              <a className="nav-link" href="/signup">
                 Register
               </a>
             </li>

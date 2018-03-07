@@ -4,13 +4,8 @@ import { Redirect } from 'react-router-dom';
 import { Card } from 'material-ui/Card';
 
 class SignUpPage extends React.Component {
-  /**
-   * Class constructor.
-   */
   constructor(props) {
     super(props);
-
-    // set the initial component state
     this.state = {
       redirect: false,
       errors: {},
@@ -24,22 +19,6 @@ class SignUpPage extends React.Component {
     this.processForm = this.processForm.bind(this);
     this.changeUser = this.changeUser.bind(this);
   }
-
-  /**
-   * Change the user object.
-   *
-   * @param {object} event - the JavaScript event object
-   */
-  changeUser(event) {
-    const field = event.target.name;
-    const user = this.state.user;
-    user[field] = event.target.value;
-
-    this.setState({
-      user,
-    });
-  }
-
   /**
    * Process the form.
    *
@@ -89,6 +68,15 @@ class SignUpPage extends React.Component {
     xhr.send(formData);
   }
 
+  changeUser(event) {
+    const field = event.target.name;
+    const user = this.state.user;
+    user[field] = event.target.value;
+
+    this.setState({
+      user
+    });
+  }
   /**
    * Render the component.
    */

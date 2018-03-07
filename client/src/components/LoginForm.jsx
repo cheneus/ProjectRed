@@ -8,7 +8,7 @@ import { Card, CardText } from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 
-const LoginForm = ({onSubmit,onChange,errors,successMessage,user}) => (
+const LoginForm = ({onSubmit,onChange, errors,successMessage,user}) => (
   <div className="card" style={{padding: '10px'}}>
     {/* <h3 className="card-header"> Welcome back to TraveLlama </h3> */}
     <div className="card-block">

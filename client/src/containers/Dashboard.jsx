@@ -12,14 +12,22 @@ class DashboardPage extends React.Component {
 
     this.state = {
       secretData: '',
-      userData: ''
+      userData: {},
+      token:''
     };
   }
 
+  componentWillMount() {
+    this.setState((prevState)=>{
+      console.log(prevState.token)
+      return {token: prevState.token}
+    })
+  }
   /**
    * This method will be executed after initial rendering.
    */
   componentDidMount() {
+    console.log(this.state.userData)
     // {Auth.isUserAuthenticated() ? (
     // if(Auth.isUserAuthenticated())
     // {

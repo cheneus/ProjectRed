@@ -19,3 +19,9 @@ submit {
   border: none;
   background-color: inherit
 }
+
+.blogo {
+  width:auto;
+  height:5em;
+  text-align: center;
+}
