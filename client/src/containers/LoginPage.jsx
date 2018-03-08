@@ -53,7 +53,7 @@ class LoginPage extends React.Component {
     console.log(formData);
     console.log('=========');
     // create an AJAX request
-    axios.post('/auth/login', formData
+    axios.post('/auth/login', formData,
       // , {
       //   header: {
       //     accept: 'application/json',
@@ -67,20 +67,20 @@ class LoginPage extends React.Component {
       // },
     ).then((res) => {
       console.log(res.data);
-      console.log(`incoming res.data`)
-      
+      console.log('incoming res.data');
+
       const jwttoken = JSON.stringify(res.data.token);
-      console.log(typeof res.data.token)
+      console.log(typeof res.data.token);
       const user = JSON.stringify(res.data.user);
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('usrname', user);
-      console.log(localStorage)
-      this.setState({token: res.data.token})
+      console.log(localStorage);
+      this.setState({ token: res.data.token });
       if (!localStorage.getItem('token')) {
         localStorage.setItem('token', this.state.userData.token);
-        console.log(localStorage.getItem('token'))
-      } else {
-      this.setState({ redirect: true });
+        console.log(localStorage.getItem('token'));
+      } else if (localStorage.getItem('token')) {
+        this.setState({ redirect: true });
       }
     }).catch((err) => {
       console.log(err);

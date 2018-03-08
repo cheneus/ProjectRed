@@ -1,7 +1,7 @@
 import React from 'react';
 import Auth from '../modules/Auth';
 import Dashboard from '../components/Dashboard.jsx';
-import {Card} from 'material-ui/Card'
+import { Card } from 'material-ui/Card';
 
 class DashboardPage extends React.Component {
   /**
@@ -13,21 +13,21 @@ class DashboardPage extends React.Component {
     this.state = {
       secretData: '',
       userData: {},
-      token:''
+      token: '',
     };
   }
 
   componentWillMount() {
-    this.setState((prevState)=>{
-      console.log(prevState.token)
-      return {token: prevState.token}
-    })
+    this.setState((prevState) => {
+      console.log(prevState.token);
+      return { token: prevState.token };
+    });
   }
   /**
    * This method will be executed after initial rendering.
    */
   componentDidMount() {
-    console.log(this.state.userData)
+    console.log(this.state.userData);
     // {Auth.isUserAuthenticated() ? (
     // if(Auth.isUserAuthenticated())
     // {
@@ -56,8 +56,8 @@ class DashboardPage extends React.Component {
    */
   render() {
     return (
-    <Card>
-    <Dashboard secretData={this.state.secretData} />
+      <Card>
+      <Dashboard secretData={this.state.secretData} />
     </Card>
     );
   }

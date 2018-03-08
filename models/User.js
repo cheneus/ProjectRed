@@ -11,11 +11,7 @@ const validateEmail = email => {
 // This is similar to a Sequelize model
 const UserSchema = new Schema({
   // `title` is required and of type String
-  firstName: {
-    type: String,
-    required: false
-  },
-  lastName: {
+  name: {
     type: String,
     required: false
   },

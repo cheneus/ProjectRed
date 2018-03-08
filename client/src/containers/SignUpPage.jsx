@@ -11,7 +11,8 @@ class SignUpPage extends React.Component {
       errors: {},
       user: {
         email: '',
-        name: '',
+        firstName: '',
+        lastName: '',
         password: '',
       },
     };

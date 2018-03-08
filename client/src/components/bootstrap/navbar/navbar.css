@@ -17,7 +17,12 @@ input,
 button,
 submit {
   border: none;
+  outline: none;
   background-color: inherit
+}
+
+.customToggler {
+
 }
 
 .blogo {

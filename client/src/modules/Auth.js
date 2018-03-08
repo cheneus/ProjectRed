@@ -9,7 +9,7 @@ const Auth = {
   isUserAuthenticated: () => localStorage.getItem('token') !== null,
   deauthenticateUser: () => {
     localStorage.removeItem('token');
-    localStorage.removeItem('usrname');
+    localStorage.removeItem('username');
   },
 };
 

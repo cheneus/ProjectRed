@@ -8,14 +8,14 @@ function Result(props) {
         You are a <strong>{props.quizResult}</strong> Llama!
       </div>
       <button
-        className="btn btn-primary"
+        className="btn"
         type="submit"
         onClick={props.handleRetakeButton}
       >
         Retake Quiz
       </button>
       <button
-        className="btn btn-primary"
+        className="btn"
         type="submit"
         onClick={props.handleItinerary}
       >

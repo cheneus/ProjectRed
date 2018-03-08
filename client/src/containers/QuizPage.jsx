@@ -3,6 +3,7 @@ import Quiz from "../components/Quiz/Quiz";
 import quizQuestions from "../components/Quiz/quizQuestions";
 import update from "react-addons-update";
 import Result from "../components/Quiz/Result";
+import Wrapper from "../components/Result/TravelWrapper"
 import PropTypes from "prop-types";
 
 class QuizPage extends Component {
@@ -27,7 +28,9 @@ class QuizPage extends Component {
         Adventurous: 0
       },
       result: "",
-      response: []
+      showPath: false,
+      response: [],
+      destination: '',
     };
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
   }
@@ -62,9 +65,6 @@ class QuizPage extends Component {
 
     return array;
   };
-
-  //chen's code
-  componentDidMount() {}
 
   setUserAnswer = () => {
     const updatedAnswersCount = update(this.state.answersCount, {
@@ -129,6 +129,10 @@ class QuizPage extends Component {
   };
 
   handleAnswerSelected = event => {
+    if (event.target.value !== "Laidback" || event.target.value !== "Tourist" || event.target.value !== "Adventurous") {
+      this.setState({destination: event.currentTarget.value})
+    } 
+    console.log(event.target.value)
     this.setState({
       answer: event.currentTarget.value
     });
@@ -173,7 +177,9 @@ class QuizPage extends Component {
   };
 
   handleItinerary = event => {
+    event.preventDefault()
     console.log("Click happened");
+    this.setState({showPath: true})
   };
 
   renderQuiz = () => {
@@ -193,11 +199,15 @@ class QuizPage extends Component {
 
   renderResult = () => {
     return (
-      <Result
+      <div>
+      {this.state.showPath ? <Wrapper destination={this.state.destination} personality={this.state.result}/> :
+        <Result
         quizResult={this.state.result}
         handleRetakeButton={this.handleRetakeButton}
         handleItinerary={this.handleItinerary}
-      />
+      />}
+      </div>
+     
     );
   };
 
