@@ -4,11 +4,9 @@ import PropTypes from 'prop-types';
 function Result(props) {
 
   return (
-    <div>
-      <div className="llama">
-        You are a <strong>{props.quizResult}</strong> Llama!
-        <img src="JSON.stringify{props.quizResult}.png" alt={props.quizResult}/>
-      </div>
+    <div className="card">
+        <img className="card-img-top" src={props.resultImg} alt={props.quizResult} />
+      <div className="card-body">
       <button
         className="btn"
         type="submit"
@@ -23,6 +21,7 @@ function Result(props) {
       >
         View Itinerary
       </button>
+      </div>
     </div>
   );
 }

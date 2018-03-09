@@ -24,9 +24,7 @@ body {
 }
 
 /* Result Component */
-.llama {
-  padding: 1.5rem 2.5rem;
-}
+
 
 /* Quiz Component */
 .answerOptions {
@@ -131,8 +129,6 @@ body {
   margin: 0 auto;
   text-align: center;
 }
-
-
 
 
 /* Animation */

@@ -18,6 +18,7 @@ class QuizPage extends Component {
           answer: ""
         }
       ],
+      img: "",
       questionId: 1,
       question: "",
       answerOptions: [],
@@ -197,7 +198,25 @@ class QuizPage extends Component {
     );
   };
 
+  renderImg = () => {
+   let result = this.state.result
+      if(result === "Laidback") {
+        return "img/Laidback.jpg";
+      }
+       if(result === "Tourist") {
+        return "img/Tourist.jpg";
+      }
+       if(result === "Adventurous") {
+        return "img/Adventurous.jpg";
+      }
+      
+  }
+
   renderResult = () => {
+    var img;
+    if (this.state.result !== "") {
+     img = this.renderImg()
+    }
     return (
       <div>
       {this.state.showPath ? <Wrapper destination={this.state.destination} personality={this.state.result}/> :
@@ -205,6 +224,7 @@ class QuizPage extends Component {
         quizResult={this.state.result}
         handleRetakeButton={this.handleRetakeButton}
         handleItinerary={this.handleItinerary}
+        resultImg = {img}
       />}
       </div>
      
