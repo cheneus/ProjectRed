@@ -1,7 +1,8 @@
 .jumbotron {
   /*background-color: #4dd0e1;*/
   background-color: #dbe5e6;
-  height: 200px;
+ /* height: 200px;*/
+ padding: 30px 30px 10px 30px;
 }
 
 a {
@@ -24,7 +25,8 @@ submit {
 }
 
 .customToggler {
-
+  display: inline-block;
+  float: right;
 }
 
 .blogo {
