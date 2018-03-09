@@ -1,4 +1,3 @@
-
 import React, {Component} from 'react';
 import "../cards.css";
 
@@ -8,7 +7,7 @@ class MexLaidBack extends Component {
 		picture: "https://raw.githubusercontent.com/ncloyd/LlamaResults/master/images/laidbackmexico.jpg",
 		restaurants: [
 	      {"name": "Azul",
-	      "url": "http://azul.rest/",
+	      "url": "https://www.yelp.com/biz/azul-m%C3%A9xico-2",
 	      "photo": "https://i.imgur.com/viwWTYL.jpg"},
 	      {"name": "Lardo",
 	      "url": "http://www.lardo.mx/",

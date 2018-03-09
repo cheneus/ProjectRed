@@ -1,4 +1,3 @@
-
 import React, {Component} from 'react';
 import "../cards.css";
 
@@ -8,13 +7,13 @@ class MexAdventurous extends Component {
 		picture: "https://raw.githubusercontent.com/ncloyd/LlamaResults/master/images/touristmexico.jpg",
 		restaurants: [
 	      {"name": "Yuban",
-	      "url": "yuban.mx",
+	      "url": "https://www.yelp.com/biz/yuban-m%C3%A9xico-3",
 	      "photo": "https://i.imgur.com/AoeVXnL.jpg"},
 	      {"name": "Los Danzantes",
-	      "url": "losdanzantes.com",
+	      "url": "http://www.losdanzantes.com/",
 	      "photo": "https://i.imgur.com/i6awBTD.jpg"},
 	      {"name": "Pizza del Perro Negro",
-	      "url": "pizzadelperronegro.com",
+	      "url": "http://www.pizzadelperronegro.com/",
 	      "photo": "https://i.imgur.com/ZNKAkJ8.jpg"}
 	    ],
 	    landmarks: [

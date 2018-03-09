@@ -2,10 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Result(props) {
+
   return (
     <div>
       <div className="llama">
         You are a <strong>{props.quizResult}</strong> Llama!
+        <img src="JSON.stringify{props.quizResult}.png" alt={props.quizResult}/>
       </div>
       <button
         className="btn"
