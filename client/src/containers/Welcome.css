@@ -2,6 +2,8 @@
 	background-color: white;
 	border-radius: 5px;
 	padding: 20px;
+	text-align: center;
+	overflow-wrap: break-word;
 }
 
 .takeQuiz {
@@ -27,13 +29,18 @@
 
 h1 {
 	font-family: 'Montserrat', sans-serif;
-	text-align: center;
-	margin-top: -15px;
+	font-size: 2em;
+	
+	/*margin-top: -15px;*/
 }
 
 .wlogo {
 	margin-top: 10px;
 }
+
+/*.btn-primary {
+
+}*/
 
 /*light teal background-color: #a9e0db
 med teal background-color: #86cbc6;
