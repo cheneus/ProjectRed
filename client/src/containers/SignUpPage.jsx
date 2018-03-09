@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import axios from 'axios'
 import SignUpForm from '../components/SignUpForm.jsx';
 import { Redirect } from 'react-router-dom';
 import { Card } from 'material-ui/Card';
@@ -11,8 +12,7 @@ class SignUpPage extends React.Component {
       errors: {},
       user: {
         email: '',
-        firstName: '',
-        lastName: '',
+        name:'',
         password: '',
       },
     };
@@ -20,12 +20,23 @@ class SignUpPage extends React.Component {
     this.processForm = this.processForm.bind(this);
     this.changeUser = this.changeUser.bind(this);
   }
+
+  changeUser(event) {
+    const field = event.target.name;
+    const user = this.state.user;
+    user[field] = event.target.value;
+
+    this.setState({
+      user,
+    });
+  }
   /**
    * Process the form.
    *
    * @param {object} event - the JavaScript event object
    */
   processForm(event) {
+    console.log("sending form")
     // prevent default action. in this case, action is the form submission event
     event.preventDefault();
 
@@ -69,15 +80,6 @@ class SignUpPage extends React.Component {
     xhr.send(formData);
   }
 
-  changeUser(event) {
-    const field = event.target.name;
-    const user = this.state.user;
-    user[field] = event.target.value;
-
-    this.setState({
-      user
-    });
-  }
   /**
    * Render the component.
    */

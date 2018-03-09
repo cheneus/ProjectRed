@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-// import { Link } from 'react-router';
 import { Card, CardText } from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
@@ -10,19 +9,19 @@ const SignUpForm = ({
   processForm, onChange, errors, user,
 }) => (
   <div className="container">
-    <form action="/" onSubmit={processForm} style={{ padding: '10px' }}>
+    <form onSubmit={processForm} style={{ padding: '10px' }}>
       <h2 className="card-heading">Sign Up</h2>
 
       {errors.summary && <p className="error-message">{errors.summary}</p>}
 
       <div className="field-line">
         <TextField
-           floatingLabelText="Name"
-           name="name"
-           errorText={errors.name}
-           onChange={onChange}
-           value={user.name}
-         />
+          floatingLabelText="Name"
+          name="name"
+          errorText={errors.name}
+          onChange={onChange}
+          value={user.name}
+        />
       </div>
       <div className="field-line">
         <TextField
@@ -46,7 +45,7 @@ const SignUpForm = ({
       </div>
 
       <div className="button-line">
-        <RaisedButton type="submit" label="Create New Account" primary />
+        <RaisedButton type="submit" label="Create New Account" primary onClick={console.log("123click123")}/>
       </div>
 
       <CardText>

@@ -6,10 +6,11 @@ const Auth = {
   //   localStorage.setItem('token', token);
   // },
   getToken: () => localStorage.getItem('token'),
-  isUserAuthenticated: () => localStorage.getItem('token') !== null,
+  isUserAuthenticated: () => localStorage.getItem('token') === null,
   deauthenticateUser: () => {
+    console.log("removingItem")
     localStorage.removeItem('token');
-    localStorage.removeItem('username');
+    localStorage.removeItem('usrname');
   },
 };
 
