@@ -1,3 +1,9 @@
+.back {
+	background-color: white;
+	border-radius: 5px;
+	padding: 20px;
+}
+
 .takeQuiz {
 	text-align: center;
 	width: 450px;
@@ -9,14 +15,14 @@
 	width: 60%;
 	color: #ccc;
 	font-size: 1.5rem;
-	background-color: #86cbc6;
-	border-color: #86cbc6;
+	background-color: #4daea5;
+	border-color: #4daea5;
 	color: #fff;
 }
 
 .quizbtn:hover{
-	background-color: #4daea5;
-	border-color: #4daea5;
+	background-color: #86cbc6;
+	border-color: #86cbc6;
 }
 
 h1 {
