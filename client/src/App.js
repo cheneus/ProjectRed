@@ -1,40 +1,46 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import { Card, CardTitle } from 'material-ui/Card';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import NavBar from './components/bootstrap/navbar/Navbar';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch,
+  Redirect,
+} from 'react-router-dom';
+import PrivateRoute from './modules/protected';
+import Home from './containers/Home';
+import LoginPage from './containers/LoginPage';
+import SignUpPage from './containers/SignUpPage';
+import DashboardPage from './containers/Dashboard';
+// import Login from './components/Login';
+import history from './modules/history';
+import QuizPage from './containers/QuizPage';
 
-class App extends Component {
-  state = {
-    response: ''
-  };
+injectTapEventPlugin();
 
-  componentDidMount() {
-    this.callApi()
-      .then(res => this.setState({ response: res.express }))
-      .catch(err => console.log(err));
-  }
-
-  callApi = async () => {
-    const response = await fetch('/api/hello');
-    const body = await response.json();
-
-    if (response.status !== 200) throw Error(body.message);
-
-    return body;
-  };
-
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-        {this.state.response}
-        </p>
+const App = () => (
+  <Router>
+    <MuiThemeProvider>
+    <NavBar />
+      <div className="container">
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/login" component={LoginPage} />
+          <Route path="/quiz" component={QuizPage} />
+          <Route path="/signup" component={SignUpPage} />
+          <Route path="/dashboard" component={DashboardPage} />
+          {/* <PrivateRoute path="/dashboard" component={DashboardPage} /> */}
+          <Redirect to="/" />
+        </Switch>
       </div>
-    );
-  }
-}
+    </MuiThemeProvider>
+  </Router>
+);
 
 export default App;

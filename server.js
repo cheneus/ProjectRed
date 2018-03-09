@@ -1,50 +1,75 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const logger = require("morgan");
-const mongoose = require("mongoose");
-const request = require("request");
-const path = require("path")
+const express = require('express')
+const bodyParser = require('body-parser')
+const logger = require('morgan')
+const mongoose = require('mongoose')
+const passport = require('./passport')
+const cookieParser = require('cookie-parser');
 
-const env = process.env.NODE_ENV || 'development';
-const config = require('./config')[env];
+// env config
+const env = process.env.NODE_ENV || 'development'
+const PORT = process.env.PORT || 5000
 
-// Require all models
-const db = require("./models");
-const PORT = process.env.PORT || 5000;
 // Initialize Express
-const app = express();
-const scrapeRouter = require('./route/scrapeRouter')
-const htmlRouter = require('./route/htmlRouter')
-const productRouter = require('./route/productRouter')
+const app = express()
+const profileRouter = require('./route/profileRouter')
+// const productRouter = require('./route/productRouter')
+const authRouter = require('./route/authRouter')
+// const apiRoutes = require('./routes/api');
 
-// Configure middleware
-
+// passport Strategy
+const localSignupStrategy = require('./passport/local-signup');
+const localLoginStrategy = require('./passport/local-login');
+// const localStrategy = require('./passport/localStrategy')
 // Use morgan logger for logging requests
-app.use(logger("dev"));
+app.use(logger('dev'))
 // Use body-parser for handling form submissions
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+app.use(cookieParser());
 // Use express.static to serve the public folder as a static directory
 // app.use(express.static("public/js"));
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+if (process.env.NODE_ENV === 'production') {
+	const path = require('path')
+	console.log('YOU ARE IN THE PRODUCTION ENV')
+	app.use('/static', express.static(path.join(__dirname, '../build/static')))
+	app.get('/', (req, res) => {
+		res.sendFile(path.join(__dirname, '../build/'))
+	})
+} else {
+	app.use(express.static('client/public'))
 }
-app.use(express.static('public'));
+app.use(express.static('public'))
 
-const connection = process.env.MONGODB_URI || 'mongodb://localhost/coffee'
+// database
+const connection = process.env.MONGODB_URI || 'mongodb://localhost/travel'
 
 mongoose.connect(connection, { useMongoClient: true },
-  function(err) {
-    if (err) throw err
-  })
+	(err) => {
+		if (err) throw err
+	})
 
-app.use('/', htmlRouter)
-app.use('/scrape', scrapeRouter)
-app.use('/product', productRouter)
+// Configure middleware
+// ===== Passport ====
+app.use(passport.initialize())
+app.use(passport.session())
 
+// passport.use('local-signup', localSignupStrategy);
+// passport.use('local-login', localLoginStrategy);
+// passport.use('local', localStrategy);
+
+// pass the authenticaion checker middleware
+const authCheckMiddleware = require('./middleware/auth-check');
+app.use('/api', authCheckMiddleware);
+
+// app.use('/', htmlRouter)
+app.use('/profile', profileRouter)
+app.use('/auth', authRouter)
+
+// to prove express is working
 app.get('/api/hello', (req, res) => {
-  res.send({ express: 'Hello From Express' });
-});
+	res.json({ express: 'Hello From Express' })
+})
 
 app.listen(PORT, () => {
-  console.log(`App running on port ${env} , ${PORT}`)
+	console.log(`Server running on port ${env} , ${PORT}`)
 })

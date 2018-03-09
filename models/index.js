@@ -1,4 +1,6 @@
 module.exports = {
-  Comment: require("./Comment"),
-  Product: require("./Product")
+	User: require('./User'),
+	Suggestion: require('./Suggestion'),
+	Place: require('./Place'),
+	Response: require('./Response')
 };
