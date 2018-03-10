@@ -106,7 +106,7 @@ router.post('/logout', (req, res) => {
 });
 
 router.post('/signup', (req, res) => {
-  const { password, email } = req.body;
+  const { name, password, email } = req.body;
   // ADD VALIDATION
   console.log(req.body);
   User.findOne({ email }, (err, userMatch) => {
@@ -116,6 +116,7 @@ router.post('/signup', (req, res) => {
       });
     }
     const newUser = new User({
+      name,
       password,
       email,
     });

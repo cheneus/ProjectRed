@@ -4,7 +4,7 @@ import React, {Component} from "react";
 // import AppBar from "material-ui/AppBar";
 // import FlatButton from "material-ui/FlatButton";
 // import ToolbarGroup from "material-ui/Toolbar/ToolbarGroup";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import Auth from "../../../modules/Auth";
 import "./navbar.css";
 // Another stateless, functional component, MyAppBar.
@@ -16,16 +16,23 @@ import "./navbar.css";
 
 class NavBar extends Component {
   state = {
-    isLoggedIn: false
+    isLoggedIn: false,
+    token: '',
   }
 
   deAuth = () => {
     this.setState({isLoggedIn: false})
     Auth.deauthenticateUser()
+    if (localStorage.getItem('token')===null) {
+       <Redirect to="/" />
+    }
+    
   }
   checkAuth = () => {
     Auth.isUserAuthenticated ? this.setState({isLoggedIn: false}) : this.setState({isLoggedIn: true})
   }
+
+
 
   componentWillMount() {
     (localStorage.getItem('token')===null) ? this.setState({isLoggedIn: false}) : this.setState({isLoggedIn: true})
@@ -79,12 +86,7 @@ class NavBar extends Component {
           ) : (
             <ul className="navbar-nav">
               <li className="nav-item">
-                <button
-                  className="nav-link nav-button"
-                  onClick={this.deAuth}
-                >
-                  Log Out
-                </button>
+              <Link className="nav-link" to="/dashboard">My Profile</Link>
               </li>
             </ul>
           )}
