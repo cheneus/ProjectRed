@@ -44,7 +44,7 @@ class LAAdventurous extends Component {
 	render() {
 	    return (
 	      <div className="card">
-	     	<img className="resultPhoto" src={this.state.picture}/>
+	     	<img className="resultPhoto" src={this.state.picture} alt={this.state.picture}/>
 			<div className="rest" id="itinerary">
 			    <h1>Restaurants</h1>
 			       	<div className="Grid">

@@ -54,17 +54,6 @@ class LoginPage extends React.Component {
     console.log('=========');
     // create an AJAX request
     axios.post('/auth/login', formData,
-      // , {
-      //   header: {
-      //     accept: 'application/json',
-      //     'Content-Type': 'application/x-www-form-urlencoded',
-      //     responseType: 'json',
-      //   },
-      //   data: {
-      //     email,
-      //     password,
-      //   },
-      // },
     ).then((res) => {
       console.log(res.data);
       console.log('incoming res.data');
@@ -85,52 +74,6 @@ class LoginPage extends React.Component {
     }).catch((err) => {
       console.log(err);
     });
-    // const xhr = new XMLHttpRequest();
-    // xhr.open('post', '/auth/login');
-    // xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    // xhr.responseType = 'json';
-    // xhr.addEventListener('load', () => {
-    //   if (xhr.status === 200) {
-    //     // success
-    //     console.log('if');
-    //     // change the component-container state
-    //     // this.setState({
-    //     //   errors: {},
-    //     // });
-
-    //     // save the token
-    //     console.log(xhr.response.token);
-    //     localStorage.setItem('token', xhr.response.token);
-    //     // Auth.authenticateUser(xhr.response.token);
-    //     localStorage.setItem('usrname', JSON.stringify(xhr.response.user));
-
-    //     console.log(JSON.parse(localStorage.getItem('usrname')).name);
-    //     // if(xhr.response.user)
-    //     // {
-    //     //   console.log(xhr.response.user);
-    //     // }
-    //     // else{
-    //     //   console.log('after signin no user returned');
-
-    //     // }
-    //     this.setState({ redirect: true });
-    //     // change the current URL to /
-    //     // this.context.router.replace('/');
-    //   } else {
-    //     // failure
-    //     console.log('else');
-    //     // change the component state
-    //     console.log(xhr.response);
-    //     // const errors = xhr.response.errors ? xhr.response.errors : {};
-    //     // errors.summary = xhr.response.message;
-    //     const errors = 'something happened';
-
-    //     this.setState({
-    //       errors,
-    //     });
-    //   }
-    // });
-    // xhr.send(formData);
   }
 
   /**
@@ -157,7 +100,8 @@ class LoginPage extends React.Component {
       <div className="col-lg-6 offset-lg-3">
         {this.state.redirect === false ? (
           <LoginForm onSubmit={this.processForm}onChange={this.changeUser}errors={this.state.errors}successMessage={this.state.successMessage} user={this.state.user} />) : (
-            <Dashboard />
+            // <Dashboard />
+            <Redirect to='/dashboard' />
       )}
 
       </div>

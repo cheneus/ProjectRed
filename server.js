@@ -65,10 +65,9 @@ app.use('/api', authCheckMiddleware);
 app.use('/profile', profileRouter)
 app.use('/auth', authRouter)
 
-// to prove express is working
-app.get('/api/hello', (req, res) => {
-	res.json({ express: 'Hello From Express' })
-})
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
 
 app.listen(PORT, () => {
 	console.log(`Server running on port ${env} , ${PORT}`)

@@ -1,4 +1,4 @@
-console.log('ProductRouter R')
+console.log('resultRouter R')
 
 const express = require('express')
 const bodyParser = require('body-parser')
@@ -7,11 +7,11 @@ const db = require('../models')
 // const mongoose = require("mongoose");
 // mongoose.Promise = Promise
 
-const productRouter = express.Router()
-productRouter.use(bodyParser.urlencoded({ extended: false }))
-productRouter.use(bodyParser.json())
+const resultRouter = express.Router()
+resultRouter.use(bodyParser.urlencoded({ extended: false }))
+resultRouter.use(bodyParser.json())
 
-productRouter.route('/')
+resultRouter.route('/')
   .get((req, res, next) => {
     db.Product.find({})
       .then(function (data) {
@@ -25,7 +25,7 @@ productRouter.route('/')
       })
   })
 
-productRouter.route('/:title')
+resultRouter.route('/:title')
   .get((req, res, next) => {
     console.log(req.params.title)
     // const tempTitle = (req.params.title).replace(/\\"/g, "'")
@@ -67,4 +67,4 @@ productRouter.route('/:title')
       })
   })
 
-module.exports = productRouter
+module.exports = resultRouter
