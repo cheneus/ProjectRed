@@ -13,17 +13,29 @@ const validateSignupForm = (payload) => {
   let isFormValid = true;
   let message = '';
 
-  if (!payload || typeof payload.email !== 'string' || !validator.isEmail(payload.email)) {
+  if (
+    !payload ||
+    typeof payload.email !== 'string' ||
+    !validator.isEmail(payload.email)
+  ) {
     isFormValid = false;
     errors.email = 'Please provide a correct email address.';
   }
 
-  if (!payload || typeof payload.password !== 'string' || payload.password.trim().length < 8) {
+  if (
+    !payload ||
+    typeof payload.password !== 'string' ||
+    payload.password.trim().length < 8
+  ) {
     isFormValid = false;
     errors.password = 'Password must have at least 8 characters.';
   }
 
-  if (!payload || typeof payload.name !== 'string' || payload.name.trim().length === 0) {
+  if (
+    !payload ||
+    typeof payload.name !== 'string' ||
+    payload.name.trim().length === 0
+  ) {
     isFormValid = false;
     errors.name = 'Please provide your name.';
   }
@@ -39,17 +51,23 @@ const validateSignupForm = (payload) => {
   };
 };
 
-router.get('/google', passport.authenticate('google', { session: false, scope: ['profile', 'email'] }));
+router.get(
+  '/google',
+  passport.authenticate('google', {
+    session: false,
+    scope: ['profile', 'email'],
+  }),
+);
 router.get(
   '/google/callback',
   passport.authenticate('google', {
     successRedirect: '/profile',
     failureRedirect: '/login',
-  }), (req, res) => {
+  }),
+  (req, res) => {
     console.log('login is successful');
     res.json(req.user);
   },
-
 );
 
 // this route is just used to get the user basic info
@@ -72,14 +90,9 @@ router.post('/login', (req, res, next) => {
     if (err) {
       console.log('working err');
       if (err.name === 'IncorrectCredentialsError') {
-        res.status(400).json({
+        return res.status(400).json({
           success: false,
           message: err.message,
-        });
-
-        res.status(400).json({
-          success: false,
-          message: 'Could not process the form.',
         });
       }
     }
@@ -111,7 +124,7 @@ router.post('/signup', (req, res) => {
   console.log(req.body);
   User.findOne({ email }, (err, userMatch) => {
     if (userMatch) {
-     return res.json({
+      return res.json({
         message: `Sorry, already a user with the email ${email}`,
       });
     }

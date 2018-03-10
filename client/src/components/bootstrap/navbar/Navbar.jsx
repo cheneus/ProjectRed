@@ -23,19 +23,14 @@ class NavBar extends Component {
   deAuth = () => {
     this.setState({isLoggedIn: false})
     Auth.deauthenticateUser()
-    if (localStorage.getItem('token')===null) {
-       <Redirect to="/" />
-    }
-    
   }
   checkAuth = () => {
     Auth.isUserAuthenticated ? this.setState({isLoggedIn: false}) : this.setState({isLoggedIn: true})
   }
-
-
-
+  
   componentWillMount() {
     (localStorage.getItem('token')===null) ? this.setState({isLoggedIn: false}) : this.setState({isLoggedIn: true})
+    if (this.state.isLoggedIn) this.setState({token: localStorage.getItem('token') })
   }
 
   render() {
@@ -67,7 +62,7 @@ class NavBar extends Component {
              <Link className="nav-link" to="/quiz"> Quiz </Link>
             </li>
           </ul>
-          {!this.state.isLoggedIn ? (
+          {(localStorage.getItem('token') === null)? (
           // {Auth.isUserAuthenticated ? (
             <ul className="navbar-nav">
               <li className="nav-item">

@@ -101,7 +101,7 @@ class LoginPage extends React.Component {
         {this.state.redirect === false ? (
           <LoginForm onSubmit={this.processForm}onChange={this.changeUser}errors={this.state.errors}successMessage={this.state.successMessage} user={this.state.user} />) : (
             // <Dashboard />
-            <Redirect to='dashboard' />
+            <Redirect to='/dashboard' />
       )}
 
       </div>

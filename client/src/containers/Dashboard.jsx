@@ -17,35 +17,54 @@ class DashboardPage extends Component {
     };
   
 
+    getProfile = () => {
+      const token = Auth.getToken();
+      const config = {
+        headers: {
+          Authorization: `bearer ${Auth.getToken()}`,
+          'x-access-token': Auth.getToken(),
+        },
+        token,
+      };
+      console.log(this.state.userData);
+      axios.get('/profile/', config)
+        .then((res, req) => {
+          console.log(res);
+          this.setState({ userData: res.data.user });
+        })
+        .catch(err => console.log(err));
+    }
+  
+     deAuth = (event) => {
+      event.preventDefault()
+      Auth.deauthenticateUser()
+      this.setState({token: ""})
+    }
+    
+
   componentWillMount() {
     this.setState({ token: localStorage.getItem('token') });
-    const token = Auth.getToken();
-    const config = {
-      headers: {
-        Authorization: `bearer ${Auth.getToken()}`,
-        'x-access-token': Auth.getToken(),
-      },
-      token,
-    };
-    console.log(this.state.userData);
-    axios.get('/profile', config)
-      .then((res, req) => {
-        console.log(res);
-        this.setState({ userData: res.data.user });
-      })
-      .catch(err => console.log(err));
-  }
-
-   deAuth = (event) => {
-    event.preventDefault()
-    Auth.deauthenticateUser()
-    this.setState({token: ""})
+    // const token = Auth.getToken();
+    // const config = {
+    //   headers: {
+    //     Authorization: `bearer ${Auth.getToken()}`,
+    //     'x-access-token': Auth.getToken(),
+    //   },
+    //   token,
+    // };
+    // console.log(this.state.userData);
+    // axios.get('/profile', config)
+    //   .then((res, req) => {
+    //     console.log(res);
+    //     this.setState({ userData: res.data.user });
+    //   })
+    //   .catch(err => console.log(err));
   }
   /**
    * This method will be executed after initial rendering.
    */
   componentDidMount() {
-
+    this.getProfile()
   }
 
   /**
