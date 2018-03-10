@@ -61,6 +61,7 @@ class SignUpPage extends React.Component {
         });
 
         // set a message
+        console.log(xhr.response)
         localStorage.setItem('successMessage', xhr.response.message);
         this.setState({ redirect: true });
         // console.log(xhr.response.message);

@@ -21,6 +21,7 @@ import DashboardPage from './containers/Dashboard';
 // import Login from './components/Login';
 import history from './modules/history';
 import QuizPage from './containers/QuizPage';
+import Footer from './components/bootstrap/Footer'
 
 injectTapEventPlugin();
 
@@ -39,6 +40,7 @@ const App = () => (
           <Redirect to="/" />
         </Switch>
       </div>
+      <Footer />
     </MuiThemeProvider>
   </Router>
 );

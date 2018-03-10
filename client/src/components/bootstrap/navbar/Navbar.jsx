@@ -35,9 +35,9 @@ class NavBar extends Component {
     return (
       <div className="jumbotron">
       <nav className="navbar navbar-expand-lg">
-        <a className="navbar-brand">
+        <Link to="/" className="navbar-brand">
         <img src="img/myLlama_updated.png" alt="logo" className="blogo img img-fluid"/>
-        </a>
+        </Link>
         <button
           className="navbar-toggler navbar-toggler-right"
           type="button"
@@ -53,28 +53,27 @@ class NavBar extends Component {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
-              <a className="nav-link" href="/">
-                Home <span className="sr-only">(current)</span>
-              </a>
+              <Link className="nav-link" to="/"> Home </Link>
+
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/quiz">
-                Quiz
-              </a>
+             <Link className="nav-link" to="/quiz"> Quiz </Link>
             </li>
           </ul>
           {!this.state.isLoggedIn ? (
           // {Auth.isUserAuthenticated ? (
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link" href="/login">
+                {/* <a className="nav-link" href="/login">
                   Login
-                </a>
+                </a> */}
+                <Link className="nav-link" to="/login"> Login </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/signup">
+                {/* <a className="nav-link" href="/signup">
                   Register
-                </a>
+                </a> */}
+                <Link className="nav-link" to="/signup"> Register </Link>
               </li>
             </ul>
           ) : (
