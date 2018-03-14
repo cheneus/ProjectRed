@@ -29,7 +29,6 @@
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-eslint": "^7.2.3",
-    "babel-loader": "^6.4.1",
     "babel-polyfill": "^6.23.0",
     "babel-preset-latest": "^6.22.0",
     "babel-preset-react": "^6.24.1",
@@ -47,9 +46,7 @@
     "nodemon": "^1.17.1",
     "prettier-eslint": "^8.8.1",
     "style-loader": "^0.16.1",
-    "url-loader": "^0.5.8",
-    "webpack": "^2.2.1",
-    "webpack-dev-server": "^2.11.1"
+    "url-loader": "^0.5.8"
   },
   "scripts": {
     "start": "nodemon -r dotenv/config -r babel-register server.js",
