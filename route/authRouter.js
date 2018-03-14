@@ -88,13 +88,19 @@ router.post('/login', (req, res, next) => {
   // next()
   passport.authenticate('local-login', (err, token, userData) => {
     if (err) {
-      console.log('working err');
-      if (err.name === 'IncorrectCredentialsError') {
+      if (err.msg === 'IncorrectCredentialsError') {
+  
         return res.status(400).json({
           success: false,
-          message: err.message,
+          message: err.msg,
         });
       }
+      console.log('working err');
+      console.log(err);
+      return res.status(400).json({
+        success: false,
+        message: "Incorrect Password or Email",
+      });
     }
     console.log('being done');
     // res.json({
@@ -124,7 +130,8 @@ router.post('/signup', (req, res) => {
   console.log(req.body);
   User.findOne({ email }, (err, userMatch) => {
     if (userMatch) {
-      return res.json({
+      return res.status(400).json({
+        success: false,
         message: `Sorry, already a user with the email ${email}`,
       });
     }

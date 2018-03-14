@@ -4,6 +4,7 @@ const logger = require('morgan')
 const mongoose = require('mongoose')
 const passport = require('./passport')
 const cookieParser = require('cookie-parser');
+const path = require('path')
 
 // env config
 const env = process.env.NODE_ENV || 'development'

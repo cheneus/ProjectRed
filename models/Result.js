@@ -1,25 +1,21 @@
+// this is temp solution
 // grab the things we need
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const ResponseSchema = new Schema({
-  answers: {
-    type: Array,
+const ResultSchema = new Schema({
+  personality: {
+    type: String,
     required: true,
   },
-  analysis: {
+  destination: {
     type: String,
     required: true,
   },
   suggestion: [{
     type: Schema.Types.ObjectId,
-    ref: 'suggestion',
   }],
-  selected: {
-    type: Schema.Types.ObjectId,
-    ref: 'suggestion',
-  },
   user: {
     type: Schema.Types.ObjectId,
     ref: 'user',
@@ -29,7 +25,7 @@ const ResponseSchema = new Schema({
 });
 
 // we need to create a model using it
-const Response = mongoose.model('response', ResponseSchema);
+const Result = mongoose.model('result', ResultSchema);
 
 // make this available to our Node applications
-module.exports = Response;
+module.exports = Result;

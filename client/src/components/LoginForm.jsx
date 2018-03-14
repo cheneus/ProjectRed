@@ -18,8 +18,8 @@ const LoginForm = ({
        <form action="/" className="form-control" onSubmit={onSubmit}>
 
 
-        {successMessage && <p className="success-message">{successMessage}</p>}
-        {errors.summary && <p className="error-message">{errors.summary}</p>}
+        {successMessage && <p className="alert alert-success">{successMessage}</p>}
+        {errors.message && <p className="alert alert-warning">{errors.message}</p>}
 
         <div className="field-line">
           <TextField
@@ -43,7 +43,7 @@ const LoginForm = ({
         </div>
 
         <div className="button-line">
-          <button className="btn btn-primary" type="submit">
+          <button className="btn" type="submit" disabled={!user.password || !user.email}>
              Login
           </button>
         </div>
