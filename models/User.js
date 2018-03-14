@@ -29,11 +29,25 @@ const UserSchema = new Schema({
     ],
   },
   password: {
-    type: String, unique: false, required: false,
+    type: String,
+    required: true,
   },
   google: {
     googleId: { type: String, required: false },
   },
+});
+
+// Define hooks for pre-saving
+UserSchema.pre('save', function (next) {
+  const user = this
+
+  if (!this.password) {
+    console.log('=======NO PASSWORD PROVIDED=======');
+    next();
+  } else {
+    this.password = this.hashPassword(this.password);
+    next();
+  }
 });
 
 // Define schema methods
@@ -42,28 +56,15 @@ UserSchema.methods = {
   // 	return bcrypt.compareSync(inputPassword, this.local.password)
   // },
   checkPassword(inputPassword, callback) {
-    console.log('callback')
+    console.log('callback');
     bcrypt.compare(inputPassword, this.password, (err, isMatch) => {
-      if (err) return callback(err)
-      console.log('isMatch is doned')
-      callback(null, isMatch)
-    })
+      if (err) return callback(err);
+      console.log('isMatch is doned');
+      callback(null, isMatch);
+    });
   },
-  hashPassword: (plainTextPassword) => bcrypt.hashSync(plainTextPassword, 10),
+  hashPassword: plainTextPassword => bcrypt.hashSync(plainTextPassword, 10),
 };
-
-// Define hooks for pre-saving
-UserSchema.pre('save', function (next) {
-  if (!this.password) {
-    console.log('=======NO PASSWORD PROVIDED=======');
-    next();
-  } else {
-    this.password = this.hashPassword(this.password);
-    next();
-  }
-  // this.password = this.hashPassword(this.password)
-  // next()
-});
 
 // This creates our model from the above schema, using mongoose's model method
 const User = mongoose.model('user', UserSchema);

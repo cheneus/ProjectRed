@@ -23,7 +23,6 @@ class LoginPage extends React.Component {
       redirect: false,
       errors: {},
       successMessage,
-      userData: '',
       token: '',
       user: {
         email: '',
@@ -55,24 +54,17 @@ class LoginPage extends React.Component {
     // create an AJAX request
     axios.post('/auth/login', formData,
     ).then((res) => {
-      console.log(res.data);
-      console.log('incoming res.data');
-
-      const jwttoken = JSON.stringify(res.data.token);
       console.log(typeof res.data.token);
       const user = JSON.stringify(res.data.user);
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('usrname', user);
       console.log(localStorage);
       this.setState({ token: res.data.token });
-      if (!localStorage.getItem('token')) {
-        localStorage.setItem('token', this.state.userData.token);
-        console.log(localStorage.getItem('token'));
-      } else if (localStorage.getItem('token')) {
-        this.setState({ redirect: true });
-      }
+      this.setState({redirect: true})
     }).catch((err) => {
-      console.log(err);
+      console.log(err.response);
+      localStorage.clear()
+      this.setState({errors: err.response.data})
     });
   }
 
@@ -90,7 +82,6 @@ class LoginPage extends React.Component {
       user,
     });
   }
-
   /**
    * Render the component.
    */

@@ -32,6 +32,7 @@ class QuizPage extends Component {
       showPath: false,
       response: [],
       destination: '',
+      suggestion:''
     };
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
   }
