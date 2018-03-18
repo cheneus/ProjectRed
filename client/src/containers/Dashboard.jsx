@@ -29,10 +29,15 @@ class DashboardPage extends Component {
       console.log(this.state.userData);
       axios.get('/profile/', config)
         .then((res, req) => {
-          console.log(res);
+          console.log("res.data")
+          console.log(res.data);
           this.setState({ userData: res.data.user });
         })
-        .catch(err => console.log(err));
+        .catch(err => {
+          console.log(err)
+          console.log(err.message)
+          this.setState({token: ''})
+        });
     }
   
      deAuth = (event) => {

@@ -2,7 +2,7 @@ const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const config = require('../config.js');
 
-exports.verifyUser =  (req, res, next) =>{
+exports.verifyUser = (req, res, next) => {
   // check header or url parameters or post parameters for token
   console.log(req.headers);
   if (!req.headers.authorization) {
@@ -17,8 +17,16 @@ exports.verifyUser =  (req, res, next) =>{
     jwt.verify(token, config.jwtSecret, (err, decoded) => {
       console.log(err);
       if (err) {
-        var err = new Error('You are not authenticated!');
+        // if (err.name = 'TokenExpiredError') {
+        //   err = new Error('Token expired');
+        // } else {
+        //   err = new Error('You are not authenticated!');
+        // }
+
         err.status = 401;
+        console.log('============')
+        console.log(err);
+        console.log('err from verify.js')
         return next(err);
       }
       // if everything is good, save to request for use in other routes
@@ -26,12 +34,11 @@ exports.verifyUser =  (req, res, next) =>{
       console.log(req.decoded);
       console.log(decoded);
       User.findById(req.decoded.sub, (userErr, user) => {
-          if (userErr || !user) {
-            return res.status(401).end();
-          }
-          next()
-        });
-
+        if (userErr || !user) {
+          return res.status(401).end();
+        }
+        next();
+      });
     });
   } else {
     // if there is no token
