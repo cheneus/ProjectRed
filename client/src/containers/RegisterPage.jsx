@@ -34,7 +34,7 @@ class RegisterPage extends Component {
         fieldValidationErrors.password = passwordValid ? "" : "Minimun of 8 characters";
         break;      
       case "name":
-      this.state.name = value.length != 0
+      this.state.name.length != 0
        fieldValidationErrors.name = this.state.name ? "" : "Please Enter a name"
         break;
        default:

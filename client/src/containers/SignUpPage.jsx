@@ -54,7 +54,7 @@ class SignUpPage extends React.Component {
     xhr.addEventListener('load', () => {
       if (xhr.status === 200) {
         // success
-
+        console.log(xhr.response)
         // change the component-container state
         this.setState({
           errors: {},
